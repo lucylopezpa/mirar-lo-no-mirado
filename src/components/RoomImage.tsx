@@ -36,9 +36,9 @@ const RoomImage: FC<RoomImageProps> = ({ image, room }) => {
                 <Dialog.Title>Título</Dialog.Title>
                 <Dialog.Description>Descripción</Dialog.Description>
               </VisuallyHidden.Root>
-              <div className="absolute top-4 right-8">
+              <div className="absolute top-6 right-8">
                 <Dialog.Close>
-                  <img src={xIcon.src} className="size-8"  alt="" />
+                  <img src={xIcon.src} className="size-6"  alt="" />
                 </Dialog.Close>
               </div>
               <TransformWrapper>

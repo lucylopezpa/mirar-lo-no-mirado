@@ -9,7 +9,7 @@ const Section: FC<PropsWithChildren<SectionProps>> = ({ centerContent = true, cl
   return (
     <section
       className={twMerge(
-        "h-full flex flex-col px-8 py-2",
+        "h-full flex flex-col px-8 pb-2",
         className,
         centerContent && "justify-center",
       )}

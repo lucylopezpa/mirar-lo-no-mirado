@@ -3,6 +3,7 @@ import { Keyboard, Mousewheel, Pagination } from "swiper/modules";
 import type { SwiperOptions } from "swiper/types";
 
 const rooms = document.querySelectorAll(".swiper-room");
+const roomsNav = document.getElementById("rooms-nav");
 const root = document.documentElement;
 
 const options: SwiperOptions = {
@@ -19,9 +20,8 @@ const options: SwiperOptions = {
   },
 };
 
-// const roomsNav = document.getElementById("rooms-nav");
-
 const swiper = new Swiper(".swiper-root", options);
+
 const observer = new IntersectionObserver((entries, observer) => {
   const [entry] = entries
   if (entry.isIntersecting) {
@@ -39,7 +39,7 @@ rooms.forEach((room) => {
     ...options,
     nested: true,
     pagination: {
-      el: ".swiper-pagination",
+      el: ".room-pagination",
       type: "custom",
       renderCustom(swiper, current, total) {
         if (current === 1) {
@@ -56,6 +56,6 @@ rooms.forEach((room) => {
 });
 
 
-// swiper.on("slideChange", (s) => {
-//   // roomsNav?.classList.toggle("opacity-0", s.activeIndex < 3);
-// });
+swiper.on("slideChange", (s) => {
+  roomsNav?.classList.toggle("opacity-0", s.activeIndex < 3);
+});

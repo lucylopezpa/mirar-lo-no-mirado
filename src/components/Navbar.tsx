@@ -26,10 +26,10 @@ const Navbar = () => {
       <Dialog.Root open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
         <Dialog.Trigger asChild>
           <button
-            className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
-            aria-label="Open main menu"
+            className="inline-flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+            aria-label="Abrir menú"
           >
-            <img src={menuIcon.src} className="block h-6 w-6" aria-hidden="true" />
+            <img src={menuIcon.src} className="block size-6" aria-hidden="true" />
           </button>
         </Dialog.Trigger>
 
@@ -48,10 +48,10 @@ const Navbar = () => {
               </a>
               <Dialog.Close asChild>
                 <button
-                  className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
-                  aria-label="Close menu"
+                  className="inline-flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                  aria-label="Cerrar menú"
                 >
-                  <img src={xIcon.src} className="h-6 w-6" aria-hidden="true" />
+                  <img src={xIcon.src} className="size-6" aria-hidden="true" />
                 </button>
               </Dialog.Close>
             </div>
