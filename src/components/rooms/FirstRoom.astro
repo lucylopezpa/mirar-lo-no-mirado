@@ -6,8 +6,10 @@ import { Image } from "astro:assets";
 ---
 
 <div class="swiper swiper-room w-full h-full" id="first-room">
-  <p class="px-8 text-center italic mt-5">Fragmentos de lo femenino</p>
-  <div class="room-pagination text-center"></div>
+  <div class="js-room-header opacity-0 transition-opacity">
+    <p class="px-8 text-center italic mt-5">Fragmentos de lo femenino</p>
+    <div class="room-pagination text-center"></div>
+  </div>
   <div class="swiper-wrapper">
     <div class="swiper-slide">
       <Section>

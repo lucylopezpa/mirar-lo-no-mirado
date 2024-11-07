@@ -1,4 +1,4 @@
-import { useState, type FC } from "react"
+import { type FC } from "react"
 import Section from "./Section"
 import fullscreenIcon from "../icons/fullscreen.svg"
 import * as Dialog from "@radix-ui/react-dialog";

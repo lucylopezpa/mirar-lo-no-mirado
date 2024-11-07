@@ -22,7 +22,7 @@ const options: SwiperOptions = {
 
 const swiper = new Swiper(".swiper-root", options);
 
-const observer = new IntersectionObserver((entries, observer) => {
+const observer = new IntersectionObserver((entries) => {
   const [entry] = entries
   if (entry.isIntersecting) {
     root.classList.add("dark")
@@ -35,21 +35,24 @@ const observer = new IntersectionObserver((entries, observer) => {
 })
 
 rooms.forEach((room) => {
-  new Swiper(room as HTMLElement, {
+  const swiper = new Swiper(room as HTMLElement, {
     ...options,
     nested: true,
     pagination: {
       el: ".room-pagination",
       type: "custom",
-      renderCustom(swiper, current, total) {
+      renderCustom(_, current, total) {
         if (current === 1) {
-            return ''
+          return '<span>&nbsp;</span>'
         }
-
-        return `<span>${current -1 }</span> / <span>${total - 1}</span>`
+        return `<span>${current - 1}</span> / <span>${total - 1}</span>`
       },
     },
   });
+  const roomHeader = room.querySelector('.js-room-header')
+  swiper.on('slideChangeTransitionStart', (s) => {
+    roomHeader?.classList.toggle("opacity-0", s.activeIndex < 1);
+  })
   if (room.id === 'third-room') {
     observer.observe(room)
   }
