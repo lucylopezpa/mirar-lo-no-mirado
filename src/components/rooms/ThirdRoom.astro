@@ -1,0 +1,54 @@
+---
+import Section from "../Section";
+import cover from '../../images/fragmentos-de-lo-femenino.jpg'
+import { Image } from "astro:assets";
+---
+
+<div class="swiper swiper-room w-full h-full" id="third-room">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <Section>
+        <h2>
+          <span class="block italic text-5xl">Caribe</span>
+          <span class="block italic text-5xl">experimental</span>
+        </h2>
+        <Image src={cover} alt="Retrato de una niña que mira directamente a la cámara desde el interior de una vivienda con paredes de madera y techo de palma. Su expresión es serena, con los brazos cruzados apoyados en el borde de una ventana. La imagen fue capturada en el corregimiento de Barranquillita, en el municipio de Chigorodó." />
+      </Section>
+    </div>
+    <div class="swiper-slide">
+      <Section>
+        <blockquote class="italic text-3xl leading-tight">
+          “La ciudad me impresiona mucho más, puesto que yo vengo de otras tierras, mi visión de la ciudad es fresca y me aporta sensaciones que desconozco.”
+        </blockquote>
+        <p class="text-xs mt-10">
+          Esbra, I. (1978) Suplemento Diario del Caribe. Pág. 1, 4, 5. Domingo, 21 de mayo.
+        </p>
+      </Section>
+    </div>
+    <div class="swiper-slide">
+      <Section>
+        <p>
+          Lejos de las narrativas que presentan un Caribe exuberante y colorido, Esbra traza un territorio lleno de contradicciones y resistencias, donde la soledad, el desgaste y la memoria encuentran un espacio para asistir a un diálogo visual que cuestiona lo que damos por sentado.
+        </p>
+      </Section>
+    </div>
+    <div class="swiper-slide">
+      <Section>
+        <blockquote class="italic text-3xl leading-tight">
+          “Me interesan desde este punto de vista las casas de madera de Puerto Colombia, los calados antiguos de madera y la luz del trópico.”
+        </blockquote>
+        <p class="text-xs mt-10">
+          Esbra, I. (1978) Suplemento Diario del Caribe. Pág. 1, 4, 5. Domingo, 21 de mayo.
+        </p>
+      </Section>
+    </div>
+    <div class="swiper-slide">
+      <Section>
+        <p>
+          Su obra dignifica lo cotidiano: hombres del común, fachadas simples, calles desiertas, rincones olvidados. La arquitectura es dotada de una frialdad nostálgica invita al espectador a mirar más allá de lo superficial, revelando la quietud y las tensiones ocultas en cada espacio.
+        </p>
+      </Section>
+    </div>
+  </div>
+  <div class="swiper-pagination"></div>
+</div>

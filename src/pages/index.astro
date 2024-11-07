@@ -2,8 +2,9 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Nav from "../components/Nav.astro";
 import Section from "../components/Section";
-import FirstRoom from "../components/FirstRoom.astro";
-import SecondRoom from "../components/SecondRoom.astro";
+import FirstRoom from "../components/rooms/FirstRoom.astro";
+import SecondRoom from "../components/rooms/SecondRoom.astro";
+import ThirdRoom from "../components/rooms/ThirdRoom.astro";
 import "swiper/css/bundle";
 ---
 
@@ -80,10 +81,13 @@ import "swiper/css/bundle";
         </Section>
       </div>
       <div class="swiper-slide">
-        <FirstRoom client:load />
+        <FirstRoom />
       </div>
       <div class="swiper-slide">
         <SecondRoom />
+      </div>
+      <div class="swiper-slide">
+        <ThirdRoom />
       </div>
     </div>
   </div>
