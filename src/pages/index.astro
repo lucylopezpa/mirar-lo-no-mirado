@@ -1,16 +1,91 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Nav from "../components/Nav.astro";
+import Section from "../components/Section";
+import FirstRoom from "../components/FirstRoom.astro";
+import SecondRoom from "../components/SecondRoom.astro";
+import "swiper/css/bundle";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Ida Esbra">
+  <div class="swiper swiper-root w-full h-full">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <Section centerContent={false}>
+          <!-- For a11y -->
+          <h1 class="absolute top-auto size-px overflow-hidden -left-[10000px]">
+            Mirar lo no mirado
+          </h1>
+          <div class="relative h-full">
+            <!-- <div class="absolute top-0 left-1/2 w-full h-full">
+              <Image
+                      src={woman}
+                      alt="Fotografía Ida Esbra"
+                      class="w-full h-full object-contain"
+                      loading="eager"
+                    />
+            </div> -->
+            <div
+              class="text-7xl font-bold font-salo flex flex-col grow shrink relative h-full"
+            >
+              <div class="items-start">
+                <div
+                  class="inline-flex flex-col items-center shrink-0 leading-[0.75]"
+                >
+                  <span>mirar</span>
+                  <span>lo</span>
+                </div>
+              </div>
+              <div class="grow"></div>
+              <div class="flex justify-end">
+                <div
+                  class="inline-flex items-start flex-col shrink-0 leading-[0.75]"
+                >
+                  <span class="-translate-x-10">no</span>
+                  <span>mirado</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="text-2xl italic shrink-0 py-2">
+            Ida Esbra y la fotografía experimental del Caribe colombiano
+          </p>
+        </Section>
+      </div>
+      <div class="swiper-slide">
+        <Section>
+          <Nav />
+        </Section>
+      </div>
+      <div class="swiper-slide">
+        <Section className="leading-normal">
+          <p>
+            La fotografía de Ida Esbra (1929-2009) se alimenta de lo que a
+            menudo se ignora, la fragilidad de lo que está a punto de
+            desaparecer, un susurro entre las ondas del agua, un cuerpo que se
+            convierte en testimonio de la fugacidad y la continuidad, de la vida
+            que se desliza y de los paisajes que guardan secretos nunca del todo
+            revelados. Cada imagen es un testimonio de la capacidad humana para
+            encontrar belleza en la diversidad, para celebrar lo común y lo
+            extraordinario en igual medida.
+          </p>
+          <p class="mt-10">
+            Con la firme convicción de que los archivos aún guardan tesoros,
+            Mirar lo no mirado es un acto de excavación, de revisar las formas
+            en que los objetos de un archivo se interpretan y se manifiestan en
+            nuestro presente. ¿Qué miradas hemos dejado ocultas bajo las capas
+            de la historia? ¿Qué significados quedan por descubrir en los
+            pliegues de lo no mirado?
+          </p>
+        </Section>
+      </div>
+      <div class="swiper-slide">
+        <FirstRoom client:load />
+      </div>
+      <div class="swiper-slide">
+        <SecondRoom />
+      </div>
+    </div>
+  </div>
+  <script src="../scripts/main.ts"></script>
+</BaseLayout>

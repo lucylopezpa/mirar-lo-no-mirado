@@ -1,0 +1,112 @@
+---
+import RoomImage from "./RoomImage";
+import Section from "./Section";
+import cover from '../images/fragmentos-de-lo-femenino.jpg'
+import { Image } from "astro:assets";
+---
+
+<div class="swiper swiper-room w-full h-full" id="first-room">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <Section>
+        <h2>
+          <span class="block italic text-5xl">Fragmentos</span>
+          <span class="block italic text-5xl">de lo</span>
+          <span class="block text-7xl font-salo">femenino</span>
+        </h2>
+        <Image src={cover} alt="Retrato de una niña que mira directamente a la cámara desde el interior de una vivienda con paredes de madera y techo de palma. Su expresión es serena, con los brazos cruzados apoyados en el borde de una ventana. La imagen fue capturada en el corregimiento de Barranquillita, en el municipio de Chigorodó." />
+      </Section>
+    </div>
+    <div class="swiper-slide">
+      <Section>
+        <p>
+          Las mujeres que plasma Ida Esbra parecen cargar con el peso de
+          narrativas invisibles. Lo femenino se enraíza en lo cotidiano. Sus
+          mujeres no son sujetos pasivos, sino cuerpos que fragmentan la mirada
+          invitándonos a cuestionar las narrativas visuales del cuerpo femenino.
+        </p>
+      </Section>
+    </div>
+    <div class="swiper-slide">
+      <RoomImage
+        image="/sala-1/fragmentos_14.jpg"
+        room="Fragmentos de lo femenino"
+        client:only
+      />
+    </div>
+    <div class="swiper-slide">
+      <Section>
+        <blockquote class="italic text-3xl leading-tight">
+          “Con esto los artistas planteaban el hecho de que el arte no era la
+          relación armónica entre las partes y el todo sino un producto de
+          deliberación humana consciente y que las obras de arte son ante todo
+          significados o intenciones”.
+        </blockquote>
+        <p class="text-xs mt-10">
+          Esbra, I. et al. Suplemento Diario del Caribe. pp. 1, 3-5. Número 238.
+          Domingo, 18 de junio, 1978, Barranquilla.
+        </p>
+      </Section>
+    </div>
+    <div class="swiper-slide">
+      <RoomImage
+        image="/sala-1/fragmentos_05.jpg"
+        room="Fragmentos de lo femenino"
+        client:only
+      />
+    </div>
+    <div class="swiper-slide">
+      <Section>
+        <p>
+          A través de gestos cotidianos, Esbra sugiere cómo estas figuras, a
+          menudo relegadas al anonimato, llevan consigo historias no contadas,
+          verdades que raramente emergen en el espacio público. Cada fragmento,
+          cada sombra, es una reivindicación. Las mujeres no desaparecen en lo
+          cotidiano; emergen desde él, reclamando su derecho a ser vistas en sus
+          propios términos.
+        </p>
+      </Section>
+    </div>
+    <div class="swiper-slide">
+      <RoomImage
+        image="/sala-1/fragmentos_10.jpg"
+        room="Fragmentos de lo femenino"
+        client:only
+      />
+    </div>
+    <div class="swiper-slide">
+      <Section>
+        <blockquote class="italic text-3xl leading-tight">
+          “acostumbraron a los artistas a tratar de encontrar en esa “realidad
+          cotidiana” aspectos mágicos, sociales, que al hombre común pasaban
+          desapercibidos. Se estableció entonces la lucha por la búsqueda de “lo
+          no manifestado de las cosas”.
+        </blockquote>
+        <p class="text-xs mt-10">
+          Esbra, I. et al. Suplemento Diario del Caribe. pp. 1, 3-5. Número 238.
+          Domingo, 18 de junio, 1978, Barranquilla
+        </p>
+      </Section>
+    </div>
+    <div class="swiper-slide">
+      <RoomImage
+        image="/sala-1/fragmentos_03.jpg"
+        room="Fragmentos de lo femenino"
+        client:only
+      />
+    </div>
+    <div class="swiper-slide">
+      <Section>
+        <p>
+          En esta narrativa, el cuerpo femenino y su cotidianidad no son simples
+          temas estéticos, sino manifestaciones políticas de resistencia, donde
+          lo visible y lo invisible, lo público y lo privado, se entrelazan para
+          desafiar las convenciones y reconfigurar nuestra forma de ver lo
+          femenino. Las fotografías son un interrogante sobre los límites de la
+          representación y la visión: ¿Qué significa mirar sin ser visto?
+        </p>
+      </Section>
+    </div>
+  </div>
+  <div class="swiper-pagination"></div>
+</div>

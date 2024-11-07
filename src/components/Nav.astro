@@ -1,0 +1,41 @@
+---
+import { Image } from "astro:assets";
+import arrowRightIcon from "../icons/arrow-right.svg";
+---
+
+<nav class="flex flex-col w-full">
+  <button
+    class="flex items-center justify-between py-5 border-y border-floral-white text-start"
+    type="button"
+  >
+    <span class="inline-flex flex-col">
+      <span class="text-4xl font-salo">Sala 1</span>
+      <span class="italic text-xl">Fragmentos de lo femenino</span>
+    </span>
+    <Image src={arrowRightIcon} alt="" />
+  </button>
+  <button
+    class="flex items-center justify-between py-5 border-b border-floral-white text-start"
+    type="button"
+  >
+    <span class="inline-flex flex-col">
+      <span class="text-4xl font-salo">Sala 2</span>
+      <span class="italic text-xl">Somos el resultado de lo que vemos</span>
+    </span>
+    <Image src={arrowRightIcon} alt="" />
+  </button>
+  <button
+    class="flex items-center justify-between py-5 border-b border-floral-white text-start"
+    type="button"
+  >
+    <span class="inline-flex flex-col">
+      <span class="text-4xl font-salo">Sala 3</span>
+      <span class="italic text-xl">Caribe experimental</span>
+    </span>
+    <Image src={arrowRightIcon} alt="" />
+  </button>
+</nav>
+<button class="italic uppercase inline-flex gap-2 items-center mt-14 justify-center">
+  <span>Sigue a la exposición</span>
+  <Image src={arrowRightIcon} alt="" width={30} height={30} />
+</button>
