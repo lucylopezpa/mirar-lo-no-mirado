@@ -38,17 +38,19 @@ const RoomImage: FC<RoomImageProps> = ({ image, room }) => {
                 <Dialog.Title>Título</Dialog.Title>
                 <Dialog.Description>Descripción</Dialog.Description>
               </VisuallyHidden.Root>
-              <div className="absolute top-6 right-8">
+              <div className="absolute top-6 right-8 z-[1]">
                 <Dialog.Close>
                   <img src={xIcon.src} className="size-6" alt="" />
                 </Dialog.Close>
               </div>
-              <TransformWrapper>
-                <TransformComponent>
+              <TransformWrapper centerOnInit>
+                <TransformComponent wrapperStyle={{
+                  width: '100dvw'
+                }} contentStyle={{ width: '100%'}}>
                   <img
                     src={image}
                     alt={room}
-                    className="w-full"
+                    className="mx-auto"
                   />
                 </TransformComponent>
               </TransformWrapper>

@@ -12,13 +12,13 @@ import { Image } from "astro:assets";
 
 <BaseLayout title="Ida Esbra">
   <nav class="font-antarctican-mono uppercase flex justify-between px-6 opacity-0" id="rooms-nav">
-    <button type="button" id="room-1">
+    <button type="button" class="js-room-anchor" data-room="room-1" data-slide="3">
       Sala 1
     </button>
-    <button type="button" id="room-2">
+    <button type="button" class="js-room-anchor" data-room="room-2" data-slide="4">
       Sala 2
     </button>
-    <button type="button" id="room-3">
+    <button type="button" class="js-room-anchor" data-room="room-3" data-slide="5">
       Sala 3
     </button>
   </nav>
