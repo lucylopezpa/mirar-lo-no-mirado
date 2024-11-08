@@ -96,7 +96,7 @@ const Navbar = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="/sobre-el-proyecto" className='px-6 flex items-center justify-between py-5'>
+                  <a href="/sobre-este-proyecto" className='px-6 flex items-center justify-between py-5'>
                     <span className='inline-flex flex-col'>
                       <span className='font-antarctican-mono uppercase text-sm'>Conoce</span>
                       <span className='text-xl italic'>Sobre el proyecto</span>
