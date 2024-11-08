@@ -18,7 +18,7 @@ const Navbar = () => {
   }, [isMobileMenuOpen])
 
   return (
-    <nav className="px-8 py-4 shrink-0 flex items-center justify-between">
+    <nav className="px-6 py-4 shrink-0 flex items-center justify-between">
       <a href="/" className="font-salo text-4xl inline-flex flex-col items-start shrink-0">
         <img src="/logo.svg" className="dark:hidden" alt="Página de inicio" />
         <img src="/logo-black.svg" className="hidden dark:block" alt="Página de inicio" />
@@ -41,7 +41,7 @@ const Navbar = () => {
               <Dialog.Title>Menú</Dialog.Title>
               <Dialog.Description>Menú con enlaces para navegar a las diferentes secciones de la página</Dialog.Description>
             </VisuallyHidden.Root>
-            <div className="px-8 py-4 shrink-0 flex items-center justify-between">
+            <div className="px-6 py-4 shrink-0 flex items-center justify-between">
               <a href="/" className="font-salo text-4xl inline-flex flex-col items-start shrink-0">
                 <img src="/logo.svg" className="dark:hidden" alt="Página de inicio" />
                 <img src="/logo-black.svg" className="hidden dark:block" alt="Página de inicio" />
@@ -57,62 +57,62 @@ const Navbar = () => {
             </div>
             <div className="flex-grow overflow-y-auto flex flex-col justify-center">
               <ul className='border-y divide-y divide-floral-white'>
-                <li className=''>
-                  <a href="" className='px-8 flex items-center justify-between py-5'>
+                <li>
+                  <a href="" className='px-6 flex items-center justify-between py-5'>
                     <span className='inline-flex flex-col'>
-                      <span className='font-antarctican-mono uppercase'>Sala 1</span>
-                      <span className='text-2xl italic'>Fragmentos de lo femenino</span>
+                      <span className='font-antarctican-mono uppercase text-sm'>Sala 1</span>
+                      <span className='text-xl italic'>Fragmentos de lo femenino</span>
                     </span>
                     <img src={externalIcon.src} className="size-14" alt="" />
                   </a>
                 </li>
-                <li className=''>
-                  <a href="" className='px-8 flex items-center justify-between py-5'>
+                <li>
+                  <a href="" className='px-6 flex items-center justify-between py-5'>
                     <span className='inline-flex flex-col'>
-                      <span className='font-antarctican-mono uppercase'>Sala 2</span>
-                      <span className='text-2xl italic'>Somos el resultado de lo que vemos</span>
+                      <span className='font-antarctican-mono uppercase text-sm'>Sala 2</span>
+                      <span className='text-xl italic'>Somos el resultado de lo que vemos</span>
                     </span>
                     <img src={externalIcon.src} className="size-14" alt="" />
                   </a>
                 </li>
-                <li className=''>
-                  <a href="" className='px-8 flex items-center justify-between py-5'>
+                <li>
+                  <a href="" className='px-6 flex items-center justify-between py-5'>
                     <span className='inline-flex flex-col'>
-                      <span className='font-antarctican-mono uppercase'>Sala 3</span>
-                      <span className='text-2xl italic'>Caribe experimental</span>
+                      <span className='font-antarctican-mono uppercase text-sm'>Sala 3</span>
+                      <span className='text-xl italic'>Caribe experimental</span>
                     </span>
                     <img src={externalIcon.src} className="size-14" alt="" />
                   </a>
                 </li>
-                <li className=''>
-                  <a href="/sobre-ida-esbra" className='px-8 flex items-center justify-between py-5'>
+                <li>
+                  <a href="/sobre-ida-esbra" className='px-6 flex items-center justify-between py-5'>
                     <span className='inline-flex flex-col'>
-                      <span className='font-antarctican-mono uppercase'>Conoce</span>
-                      <span className='text-2xl italic'>Sobre Ida Esbra</span>
+                      <span className='font-antarctican-mono uppercase text-sm'>Conoce</span>
+                      <span className='text-xl italic'>Sobre Ida Esbra</span>
                     </span>
                     <img src={externalIcon.src} className="size-14" alt="" />
                   </a>
                 </li>
-                <li className=''>
-                  <a href="/sobre-el-proyecto" className='px-8 flex items-center justify-between py-5'>
+                <li>
+                  <a href="/sobre-el-proyecto" className='px-6 flex items-center justify-between py-5'>
                     <span className='inline-flex flex-col'>
-                      <span className='font-antarctican-mono uppercase'>Conoce</span>
-                      <span className='text-2xl italic'>Sobre el proyecto</span>
+                      <span className='font-antarctican-mono uppercase text-sm'>Conoce</span>
+                      <span className='text-xl italic'>Sobre el proyecto</span>
                     </span>
                     <img src={externalIcon.src} className="size-14" alt="" />
                   </a>
                 </li>
                 <li className='/sobre-la-grafica'>
-                  <a href="" className='px-8 flex items-center justify-between py-5'>
+                  <a href="" className='px-6 flex items-center justify-between py-5'>
                     <span className='inline-flex flex-col'>
-                      <span className='font-antarctican-mono uppercase'>Conoce</span>
-                      <span className='text-2xl italic'>Sobre la gráfica</span>
+                      <span className='font-antarctican-mono uppercase text-sm'>Conoce</span>
+                      <span className='text-xl italic'>Sobre la gráfica</span>
                     </span>
                     <img src={externalIcon.src} className="size-14" alt="" />
                   </a>
                 </li>
               </ul>
-              <a href="/aviso-legal" className='flex gap-2 px-8 mt-6 items-center font-antarctican-mono uppercase'>
+              <a href="/aviso-legal" className='flex gap-2 px-6 mt-6 items-center font-antarctican-mono uppercase text-sm'>
                 <span>Aviso legal</span>
                 <img src={arrowRight.src} className='size-8' alt="" />
               </a>
