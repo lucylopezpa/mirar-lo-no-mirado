@@ -6,6 +6,8 @@ const rooms = document.querySelectorAll(".swiper-room");
 const roomsNav = document.getElementById("rooms-nav");
 const root = document.documentElement;
 
+const tabs = new Map<string, HTMLButtonElement>()
+
 const options: SwiperOptions = {
   modules: [Mousewheel, Keyboard, Pagination],
   direction: "horizontal",
@@ -23,13 +25,16 @@ const options: SwiperOptions = {
 const swiper = new Swiper(".swiper-root", options);
 
 const observer = new IntersectionObserver((entries) => {
-  const [entry] = entries
-  if (entry.isIntersecting) {
-    root.classList.add("dark")
-  } else {
-    root.classList.remove("dark")
-  }
-
+  entries.forEach(entry => {
+    const room = (entry.target as HTMLElement).dataset.room as string
+    if (!tabs.has(room)) {
+      tabs.set(room, document.getElementById(room) as HTMLButtonElement)
+    }
+    tabs.get(room)?.classList.toggle("font-bold", entry.isIntersecting)
+    if (room === "room-3") {
+      root.classList.toggle("dark", entry.isIntersecting)
+    }
+  })
 }, {
   threshold: 0.1
 })
@@ -53,12 +58,8 @@ rooms.forEach((room) => {
   swiper.on('slideChangeTransitionStart', (s) => {
     roomHeader?.classList.toggle("opacity-0", s.activeIndex < 1);
   })
-  if (room.id === 'third-room') {
-    observer.observe(room)
-  }
+  observer.observe(room)
 });
-
-
-swiper.on("slideChange", (s) => {
-  roomsNav?.classList.toggle("opacity-0", s.activeIndex < 3);
+swiper.on("slideChange", ({ activeIndex }) => {
+  roomsNav?.classList.toggle("opacity-0", activeIndex < 3);
 });

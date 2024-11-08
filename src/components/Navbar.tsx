@@ -2,6 +2,7 @@ import * as Dialog from '@radix-ui/react-dialog'
 import * as VisuallyHidden from '@radix-ui/react-visually-hidden'
 import { useEffect, useState } from 'react'
 import menuIcon from "../icons/menu.svg"
+import menuBlackIcon from "../icons/menu-black.svg"
 import xIcon from "../icons/x.svg"
 import externalIcon from "../icons/external.svg"
 import arrowRight from "../icons/arrow-right.svg"
@@ -29,22 +30,23 @@ const Navbar = () => {
             className="inline-flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
             aria-label="Abrir menú"
           >
-            <img src={menuIcon.src} className="block size-6" aria-hidden="true" />
+            <img src={menuIcon.src} className="dark:hidden block size-6" aria-hidden="true" />
+            <img src={menuBlackIcon.src} className="hidden dark:block size-6" aria-hidden="true" />
           </button>
         </Dialog.Trigger>
 
         {/* Mobile Menu Dialog */}
         <Dialog.Portal>
           <Dialog.Overlay className="fixed inset-0 bg-eerie-black bg-opacity-25" />
-          <Dialog.Content className="fixed inset-0 z-50 flex flex-col bg-eerie-black">
+          <Dialog.Content className="fixed inset-0 z-50 flex flex-col bg-eerie-black dark:text-floral-white">
             <VisuallyHidden.Root>
               <Dialog.Title>Menú</Dialog.Title>
               <Dialog.Description>Menú con enlaces para navegar a las diferentes secciones de la página</Dialog.Description>
             </VisuallyHidden.Root>
             <div className="px-6 py-4 shrink-0 flex items-center justify-between">
               <a href="/" className="font-salo text-4xl inline-flex flex-col items-start shrink-0">
-                <img src="/logo.svg" className="dark:hidden" alt="Página de inicio" />
-                <img src="/logo-black.svg" className="hidden dark:block" alt="Página de inicio" />
+                <img src="/logo.svg" alt="Página de inicio" />
+                {/* <img src="/logo-black.svg" className="hidden dark:block" alt="Página de inicio" /> */}
               </a>
               <Dialog.Close asChild>
                 <button
