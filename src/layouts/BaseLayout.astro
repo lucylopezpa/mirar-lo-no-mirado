@@ -14,18 +14,10 @@ const { title } = Astro.props;
     <title>{title} | Mirar lo no mirado</title>
   </head>
   <body
-    class="font-nicholas bg-eerie-black text-floral-white dark:bg-floral-white dark:text-eerie-black transition-colors duration-75"
+    class="font-nicholas bg-eerie-black text-floral-white dark:bg-floral-white dark:text-eerie-black transition-colors duration-75 max-w-md mx-auto"
   >
     <div class="flex flex-col h-dvh">
       <Navbar client:load />
-      <!-- <ul
-      class="flex items-center justify-between text-base mt-4 opacity-0 transition-opacity"
-      id="rooms-nav"
-    >
-      <li><button class="uppercase" type="button">Sala 1</button></li>
-      <li><button class="uppercase" type="button">Sala 2</button></li>
-      <li><button class="uppercase" type="button">Sala 3</button></li>
-    </ul> -->
       <slot />
     </div>
   </body>

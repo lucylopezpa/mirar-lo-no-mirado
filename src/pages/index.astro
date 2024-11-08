@@ -5,7 +5,9 @@ import Section from "../components/Section";
 import FirstRoom from "../components/rooms/FirstRoom.astro";
 import SecondRoom from "../components/rooms/SecondRoom.astro";
 import ThirdRoom from "../components/rooms/ThirdRoom.astro";
+import arrowRightIcon from "../icons/arrow-right.svg"
 import "swiper/css/bundle";
+import { Image } from "astro:assets";
 ---
 
 <BaseLayout title="Ida Esbra">
@@ -52,7 +54,7 @@ import "swiper/css/bundle";
             </div>
           </div>
           <p class="text-2xl italic shrink-0 py-2">
-            Ida Esbra y la fotografía experimental del Caribe colombiano
+            Ida Esbra y la fotografía experimental del Caribe colombiano <Image src={arrowRightIcon} class="animate-pulse inline-block" alt="" />
           </p>
         </Section>
       </div>

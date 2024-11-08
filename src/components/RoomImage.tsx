@@ -1,4 +1,4 @@
-import { type FC } from "react"
+import { useState, type FC } from "react"
 import Section from "./Section"
 import fullscreenIcon from "../icons/fullscreen.svg"
 import * as Dialog from "@radix-ui/react-dialog";
@@ -7,6 +7,7 @@ import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import { Drawer } from "vaul";
 import arrowUpIcon from '../icons/arrow-up.svg'
 import xIcon from '../icons/x.svg'
+import clsx from "clsx";
 
 type RoomImageProps = {
   image: string
@@ -14,6 +15,8 @@ type RoomImageProps = {
 }
 
 const RoomImage: FC<RoomImageProps> = ({ image, room }) => {
+  const [animationEnded, setAnimationEnded] = useState<Boolean | null>()
+
   return (
     <>
       <div className="relative">
@@ -53,17 +56,17 @@ const RoomImage: FC<RoomImageProps> = ({ image, room }) => {
           </Dialog.Portal>
         </Dialog.Root>
       </div>
-      <Drawer.Root>
+      <Drawer.Root onAnimationEnd={setAnimationEnded}>
         <Drawer.Trigger asChild>
-          <div className="absolute py-2 px-6 left-0 bottom-0 w-full">
-            <div className="absolute bottom-full left-0 w-full">
+          <div className={clsx("absolute py-2 px-6 left-0 bottom-12 w-full z-[1] bg-eerie-black", { 'invisible': animationEnded !== null && animationEnded })}>
+            <div className="absolute left-0 top-0 w-full -translate-y-full">
               <div className="flex w-full items-baseline">
                 <div className="h-px bg-white grow"></div>
                 <svg width="57" height="28" viewBox="0 0 57 28" fill="#222222" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M56.458 27.23c-5.204 0-9.428-4.23-9.428-9.44v-3.37C47.03 7.01 41.027 1 33.627 1H22.83C15.43 1 9.428 7.01 9.428 14.42v3.37c0 5.21-4.225 9.44-9.428 9.44" stroke="#fff" /></svg>
                 <div className="h-px bg-white w-2 -translate-x-0.5"></div>
               </div>
             </div>
-            <button className="absolute bottom-full cursor-pointer size-10 flex items-center justify-center right-4 pt-4 border-b border-eerie-black">
+            <button className="absolute bottom-full cursor-pointer size-10 flex items-center justify-center right-4 pt-5 border-b border-eerie-black">
               <img src={arrowUpIcon.src} alt="" />
             </button>
             <span>La mano descansa sobre el torso de una mujer, de la cual solo se observa esta sección del cuerpo.</span>
@@ -71,7 +74,7 @@ const RoomImage: FC<RoomImageProps> = ({ image, room }) => {
         </Drawer.Trigger>
         <Drawer.Portal>
           <Drawer.Overlay className="fixed inset-0 bg-eerie-black/40 z-10" />
-          <Drawer.Content className="flex flex-col mt-24 h-[80%] lg:h-[320px] fixed bottom-0 left-0 right-0 outline-none z-10">
+          <Drawer.Content className="flex flex-col mt-24 h-[80%] fixed bottom-0 left-0 right-0 outline-none z-10">
             <div className="py-4 px-6 bg-eerie-black flex-1 overflow-y-auto">
               <div className="max-w-md mx-auto">
                 <div aria-hidden className="absolute w-full left-0 -top-7">
