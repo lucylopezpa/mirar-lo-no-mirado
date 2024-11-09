@@ -1,0 +1,179 @@
+---
+import menuIcon from "../icons/menu.svg";
+import menuBlackIcon from "../icons/menu-black.svg";
+import xIcon from "../icons/x.svg";
+import externalIcon from "../icons/external.svg";
+import arrowRight from "../icons/arrow-right.svg";
+import { Image } from "astro:assets";
+---
+
+<nav class="px-6 py-4 shrink-0 flex items-center justify-between">
+  <a
+    href="/"
+    class="font-salo text-4xl inline-flex flex-col items-start shrink-0"
+  >
+    <img src="/logo.svg" class="dark:hidden" alt="Página de inicio" />
+    <img
+      src="/logo-black.svg"
+      class="hidden dark:block"
+      alt="Página de inicio"
+    />
+  </a>
+  <div>
+    <button
+      id="menu-toggle-button"
+      class="inline-flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+      aria-label="Abrir menú"
+    >
+      <Image
+        src={menuIcon}
+        class="dark:hidden block size-6"
+        alt=""
+        aria-hidden
+      />
+      <Image
+        src={menuBlackIcon}
+        class="hidden dark:block size-6"
+        aria-hidden
+        alt=""
+      />
+    </button>
+  </div>
+
+  <div
+    id="mobile-menu"
+    class="fixed inset-0 z-50 flex flex-col bg-eerie-black dark:text-floral-white hidden"
+  >
+    <div class="flex flex-col h-full">
+      <div class="px-6 py-4 shrink-0 flex items-center justify-between">
+        <a
+          href="/"
+          class="font-salo text-4xl inline-flex flex-col items-start shrink-0"
+        >
+          <img src="/logo.svg" alt="Página de inicio" />
+        </a>
+        <button
+          id="menu-close-button"
+          class="inline-flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+          aria-label="Cerrar menú"
+        >
+          <Image src={xIcon} class="size-6" aria-hidden alt="" />
+        </button>
+      </div>
+      <div class="flex-grow overflow-y-auto flex flex-col justify-center">
+        <ul class="border-y divide-y divide-floral-white">
+          <li>
+            <a
+              class="px-6 flex items-center justify-between py-2"
+              href="/#room-1"
+              data-slide="3"
+            >
+              <span class="inline-flex flex-col">
+                <span class="font-antarctican-mono uppercase text-sm"
+                  >Sala 1</span
+                >
+                <span class="text-xl italic">Fragmentos de lo femenino</span>
+              </span>
+              <Image src={externalIcon} alt="" class="size-14" />
+            </a>
+          </li>
+          <li>
+            <a
+              class="px-6 flex items-center justify-between py-2"
+              href="/#room-2"
+              data-slide="4"
+            >
+              <span class="inline-flex flex-col">
+                <span class="font-antarctican-mono uppercase text-sm"
+                  >Sala 2</span
+                >
+                <span class="text-xl italic"
+                  >Somos el resultado de lo que vemos</span
+                >
+              </span>
+              <Image src={externalIcon} class="size-14" alt="" />
+            </a>
+          </li>
+          <li>
+            <a
+              class="px-6 flex items-center justify-between py-2"
+              href="/#room-3"
+              data-slide="5"
+            >
+              <span class="inline-flex flex-col">
+                <span class="font-antarctican-mono uppercase text-sm"
+                  >Sala 3</span
+                >
+                <span class="text-xl italic">Caribe experimental</span>
+              </span>
+              <Image src={externalIcon} class="size-14" alt="" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="/sobre-ida-esbra"
+              class="px-6 flex items-center justify-between py-2"
+            >
+              <span class="inline-flex flex-col">
+                <span class="font-antarctican-mono uppercase text-sm"
+                  >Conoce</span
+                >
+                <span class="text-xl italic">Sobre Ida Esbra</span>
+              </span>
+              <Image src={externalIcon} class="size-14" alt="" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="/sobre-este-proyecto"
+              class="px-6 flex items-center justify-between py-2"
+            >
+              <span class="inline-flex flex-col">
+                <span class="font-antarctican-mono uppercase text-sm"
+                  >Conoce</span
+                >
+                <span class="text-xl italic">Sobre el proyecto</span>
+              </span>
+              <Image src={externalIcon} class="size-14" alt="" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="/sobre-la-grafica"
+              class="px-6 flex items-center justify-between py-2"
+            >
+              <span class="inline-flex flex-col">
+                <span class="font-antarctican-mono uppercase text-sm"
+                  >Conoce</span
+                >
+                <span class="text-xl italic">Sobre la gráfica</span>
+              </span>
+              <Image src={externalIcon} class="size-14" alt="" />
+            </a>
+          </li>
+        </ul>
+        <a
+          href="/aviso-legal"
+          class="flex gap-2 px-6 mt-6 items-center font-antarctican-mono uppercase text-sm"
+        >
+          <span>Aviso legal</span>
+          <Image src={arrowRight} class="size-8" alt="" />
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+<script>
+  const menuToggleButton = document.getElementById("menu-toggle-button");
+  const menuCloseButton = document.getElementById("menu-close-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+  
+  menuToggleButton?.addEventListener("click", () => {
+    mobileMenu?.classList.toggle("hidden");
+    menuCloseButton?.focus()
+  });
+
+  menuCloseButton?.addEventListener("click", () => {
+    mobileMenu?.classList.add("hidden");
+  });
+</script>
