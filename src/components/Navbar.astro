@@ -68,12 +68,7 @@ import { Image } from "astro:assets";
               href="/#room-1"
               data-slide="3"
             >
-              <span class="inline-flex flex-col">
-                <span class="font-antarctican-mono uppercase text-sm"
-                  >Sala 1</span
-                >
-                <span class="text-xl italic">Fragmentos de lo femenino</span>
-              </span>
+              <span class="text-xl italic">Fragmentos de lo femenino</span>
               <Image src={externalIcon} alt="" class="size-14" />
             </a>
           </li>
@@ -83,13 +78,8 @@ import { Image } from "astro:assets";
               href="/#room-2"
               data-slide="4"
             >
-              <span class="inline-flex flex-col">
-                <span class="font-antarctican-mono uppercase text-sm"
-                  >Sala 2</span
-                >
-                <span class="text-xl italic"
-                  >Somos el resultado de lo que vemos</span
-                >
+              <span class="text-xl italic">
+                Somos el resultado de lo que vemos
               </span>
               <Image src={externalIcon} class="size-14" alt="" />
             </a>
@@ -101,9 +91,6 @@ import { Image } from "astro:assets";
               data-slide="5"
             >
               <span class="inline-flex flex-col">
-                <span class="font-antarctican-mono uppercase text-sm"
-                  >Sala 3</span
-                >
                 <span class="text-xl italic">Caribe experimental</span>
               </span>
               <Image src={externalIcon} class="size-14" alt="" />
@@ -167,10 +154,10 @@ import { Image } from "astro:assets";
   const menuToggleButton = document.getElementById("menu-toggle-button");
   const menuCloseButton = document.getElementById("menu-close-button");
   const mobileMenu = document.getElementById("mobile-menu");
-  
+
   menuToggleButton?.addEventListener("click", () => {
     mobileMenu?.classList.toggle("hidden");
-    menuCloseButton?.focus()
+    menuCloseButton?.focus();
   });
 
   menuCloseButton?.addEventListener("click", () => {
