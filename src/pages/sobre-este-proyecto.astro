@@ -1,10 +1,12 @@
 ---
+import { Image } from "astro:assets";
 import Footer from "../components/Footer.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import externalIcon from "../icons/external.svg";
 ---
 
 <BaseLayout title="Sobre este proyecto">
-  <div class="p-8">
+  <div class="p-6">
     <h1 class="text-7xl font-salo font-bold leading-[0.8]">
       Sobre este
       <span class="block">proyecto</span>
@@ -52,16 +54,43 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         de Nina S. de Friedemann, bajo custodia de la Biblioteca Luis Ángel
         Arango. La entrega está organizada en tres salas temáticas:
       </p>
+      <div
+        class="border-y flex items-center justify-between py-2 border-b border-floral-white text-start relative right-1/2 left-1/2 w-screen -ml-[50vw] -mr-[50vw] px-6"
+      >
+        <span class="inline-flex flex-col gap-1">
+          <span class="uppercase font-antarctican-mono">Sala 1</span>
+          <span class="italic text-2xl">Fragmentos de lo femenino</span>
+        </span>
+        <Image src={externalIcon} class="size-10" alt="" />
+      </div>
       <p>
         Explora la representación de lo femenino, el espacio privado y los roles
         de género. La obra de Esbra nos invita a desacostumbrar nuestra mirada y
         cuestionar las narrativas visuales del cuerpo femenino.
       </p>
+      <div
+        class="border-y flex items-center justify-between py-2 border-b border-floral-white text-start relative right-1/2 left-1/2 w-screen -ml-[50vw] -mr-[50vw] px-6"
+      >
+        <span class="inline-flex flex-col gap-1">
+          <span class="uppercase font-antarctican-mono">Sala 2</span>
+          <span class="italic text-2xl">Somos el resultado de lo que vemos</span>
+        </span>
+        <Image src={externalIcon} class="size-10" alt="" />
+      </div>
       <p>
         Aborda las tensiones entre el fotoconpetualismo y el surrealismo,
         explorando el uso del simbolismo y la ambigüedad en la obra de Esbra en
         temas como la identidad y lo imaginativo.
       </p>
+      <div
+        class="border-y flex items-center justify-between py-2 border-b border-floral-white text-start relative right-1/2 left-1/2 w-screen -ml-[50vw] -mr-[50vw] px-6"
+      >
+        <span class="inline-flex flex-col gap-1">
+          <span class="uppercase font-antarctican-mono">Sala 3</span>
+          <span class="italic text-2xl">Caribe experimental</span>
+        </span>
+        <Image src={externalIcon} class="size-10" alt="" />
+      </div>
       <p>
         La serie presenta un juego entre lo festivo y lo introspectivo, entre lo
         documental y lo conceptual. Puede ser visto como un acto de resistencia
@@ -69,6 +98,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         arte, cuestionando las representaciones tradicionales y ofreciendo un
         Caribe que es, a la vez, familiar y sorprendentemente.
       </p>
+    </div>
+    <div class="mt-12 space-y-8">
       <h3 class="text-2xl italic">Agradecimientos</h3>
       <p>
         A Jan Esbra, por su apertura y disposición desde el día uno. Sin ti,

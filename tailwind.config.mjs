@@ -9,7 +9,9 @@ export default {
         'floral-white': '#FFFAF4'
       },
       fontFamily: {
-        salo: ['salo-variable', 'sans-serif'],
+        salo: ['"salo-variable", "sans-serif"', {
+          fontVariationSettings: '"opsz" 128'
+        }],
         nicholas: ['nicholas', 'sans-serif'],
         "antarctican-mono": ['antarctican-mono', 'monospace']
       }
