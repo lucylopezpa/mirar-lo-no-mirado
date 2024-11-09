@@ -60,7 +60,7 @@ const Navbar = () => {
             <div className="flex-grow overflow-y-auto flex flex-col justify-center">
               <ul className='border-y divide-y divide-floral-white'>
                 <li>
-                  <a href="" className='px-6 flex items-center justify-between py-5'>
+                  <a href="/" className='px-6 flex items-center justify-between py-2'>
                     <span className='inline-flex flex-col'>
                       <span className='font-antarctican-mono uppercase text-sm'>Sala 1</span>
                       <span className='text-xl italic'>Fragmentos de lo femenino</span>
@@ -69,7 +69,7 @@ const Navbar = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="" className='px-6 flex items-center justify-between py-5'>
+                  <a href="/" className='px-6 flex items-center justify-between py-2'>
                     <span className='inline-flex flex-col'>
                       <span className='font-antarctican-mono uppercase text-sm'>Sala 2</span>
                       <span className='text-xl italic'>Somos el resultado de lo que vemos</span>
@@ -78,7 +78,7 @@ const Navbar = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="" className='px-6 flex items-center justify-between py-5'>
+                  <a href="/" className='px-6 flex items-center justify-between py-2'>
                     <span className='inline-flex flex-col'>
                       <span className='font-antarctican-mono uppercase text-sm'>Sala 3</span>
                       <span className='text-xl italic'>Caribe experimental</span>
@@ -87,7 +87,7 @@ const Navbar = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="/sobre-ida-esbra" className='px-6 flex items-center justify-between py-5'>
+                  <a href="/sobre-ida-esbra" className='px-6 flex items-center justify-between py-2'>
                     <span className='inline-flex flex-col'>
                       <span className='font-antarctican-mono uppercase text-sm'>Conoce</span>
                       <span className='text-xl italic'>Sobre Ida Esbra</span>
@@ -96,7 +96,7 @@ const Navbar = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="/sobre-este-proyecto" className='px-6 flex items-center justify-between py-5'>
+                  <a href="/sobre-este-proyecto" className='px-6 flex items-center justify-between py-2'>
                     <span className='inline-flex flex-col'>
                       <span className='font-antarctican-mono uppercase text-sm'>Conoce</span>
                       <span className='text-xl italic'>Sobre el proyecto</span>
@@ -104,8 +104,8 @@ const Navbar = () => {
                     <img src={externalIcon.src} className="size-14" alt="" />
                   </a>
                 </li>
-                <li className='/sobre-la-grafica'>
-                  <a href="" className='px-6 flex items-center justify-between py-5'>
+                <li>
+                  <a href="/sobre-la-grafica" className='px-6 flex items-center justify-between py-2'>
                     <span className='inline-flex flex-col'>
                       <span className='font-antarctican-mono uppercase text-sm'>Conoce</span>
                       <span className='text-xl italic'>Sobre la gráfica</span>
