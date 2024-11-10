@@ -1,20 +1,17 @@
 import queryString from "query-string";
 import Swiper from "swiper";
-import { Keyboard, Mousewheel, Pagination } from "swiper/modules";
+import { Mousewheel, Pagination } from "swiper/modules";
 import type { SwiperOptions } from "swiper/types";
 import { getSlideIndex, roomConfigs, type Slider } from "./utils";
 
 const options: SwiperOptions = {
-  modules: [Mousewheel, Keyboard, Pagination],
+  modules: [Mousewheel, Pagination],
   direction: "horizontal",
   loop: false,
-  speed: 500,
+  speed: 700,
   mousewheel: {
     enabled: true,
     forceToAxis: true,
-  },
-  keyboard: {
-    enabled: true,
   },
 };
 
