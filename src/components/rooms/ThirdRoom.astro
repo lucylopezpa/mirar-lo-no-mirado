@@ -1,7 +1,6 @@
 ---
 import RoomSection from "../RoomSection";
-import cover from "../../images/fragmentos-de-lo-femenino.jpg";
-import { Image } from "astro:assets";
+import RoomImage from "../RoomImage";
 ---
 
 <div class="swiper swiper-room w-full h-full" id="room-3">
@@ -41,12 +40,28 @@ import { Image } from "astro:assets";
     </div>
     <div class="swiper-slide">
       <RoomSection>
+        <RoomImage
+          id="Caribe_06"
+          client:only="react"
+        />
+      </RoomSection>
+    </div>
+    <div class="swiper-slide">
+      <RoomSection>
         <p>
           Lejos de las narrativas que presentan un Caribe exuberante y colorido,
           Esbra traza un territorio lleno de contradicciones y resistencias,
           donde la soledad, el desgaste y la memoria encuentran un espacio para
           asistir a un diálogo visual que cuestiona lo que damos por sentado.
         </p>
+      </RoomSection>
+    </div>
+    <div class="swiper-slide">
+      <RoomSection>
+        <RoomImage
+          id="Caribe_07"
+          client:only="react"
+        />
       </RoomSection>
     </div>
     <div class="swiper-slide">
@@ -59,6 +74,14 @@ import { Image } from "astro:assets";
           Esbra, I. (1978) Suplemento Diario del Caribe. Pág. 1, 4, 5. Domingo,
           21 de mayo.
         </p>
+      </RoomSection>
+    </div>
+    <div class="swiper-slide">
+      <RoomSection>
+        <RoomImage
+          id="Caribe_18"
+          client:only="react"
+        />
       </RoomSection>
     </div>
     <div class="swiper-slide">

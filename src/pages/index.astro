@@ -6,6 +6,7 @@ import FirstRoom from "../components/rooms/FirstRoom.astro";
 import SecondRoom from "../components/rooms/SecondRoom.astro";
 import ThirdRoom from "../components/rooms/ThirdRoom.astro";
 import arrowRightIcon from "../icons/arrow-right.svg"
+import externalIcon from "../icons/external.svg"
 import "swiper/css/bundle";
 import { Image } from "astro:assets";
 ---
@@ -93,6 +94,57 @@ import { Image } from "astro:assets";
       </div>
       <div class="swiper-slide">
         <ThirdRoom />
+      </div>
+      <div class="swiper-slide">
+        <Section className="px-0">
+          <p class="px-6 font-antarctican-mono uppercase">Conoce más</p>
+          <nav class="mt-5">
+            <ul class="divide-y font-salo font-bold border-y">
+              <li>
+                <a
+                  href="/sobre-ida-esbra"
+                  class="flex items-center justify-between px-6 py-2"
+                >
+                  <span class="text-4xl">Sobre Ida Esbra</span>
+                  <Image src={externalIcon} class="size-14" alt="" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/sobre-este-proyecto"
+                  class="flex items-center justify-between px-6 py-2"
+                >
+                  <span class="text-4xl">Sobre el proyecto</span>
+                  <Image src={externalIcon} class="size-14" alt="" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/sobre-la-grafica"
+                  class="flex items-center justify-between px-6 py-2"
+                >
+                  <span class="text-4xl">Sobre la gráfica</span>
+                  <Image src={externalIcon} class="size-14" alt="" />
+                </a>
+              </li>
+              <li>
+                <a href="/aviso-legal" class="flex items-center justify-between px-6 py-2">
+                  <span class="text-4xl">Aviso legal</span>
+                  <Image src={externalIcon} class="size-14" alt="" />
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="py-5 px-6">
+            <a
+              id="scroll-to-top"
+              class="inline-flex font-antarctican-mono gap-4 items-center uppercase"
+              href="/"
+            >
+              <span>Volver al inicio</span>
+            </a>
+          </div>
+        </Section>
       </div>
     </div>
   </div>

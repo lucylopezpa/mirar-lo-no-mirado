@@ -5,6 +5,7 @@ import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import { Drawer } from "vaul";
 import arrowUpIcon from '../icons/arrow-up.svg'
+import arrowUpBlackIcon from '../icons/arrow-up-black.svg'
 import xIcon from '../icons/x.svg'
 import clsx from "clsx";
 import { getImageMetadata } from "../scripts/gallery";
@@ -81,16 +82,17 @@ const RoomImage: FC<RoomImageProps> = ({ id }) => {
       </div>
       <Drawer.Root onAnimationEnd={setAnimationEnded}>
         <Drawer.Trigger asChild>
-          <div className={clsx("absolute py-2 px-6 left-0 bottom-12 w-full z-[1] bg-eerie-black", { 'invisible': animationEnded !== null && animationEnded })}>
+          <div className={clsx("absolute py-2 px-6 left-0 bottom-16 w-full z-[1] bg-eerie-black dark:bg-floral-white", { 'invisible': animationEnded !== null && animationEnded })}>
             <div className="absolute left-0 top-0 w-full -translate-y-full">
               <div className="flex w-full items-baseline">
-                <div className="h-px bg-white grow"></div>
-                <svg width="57" height="28" viewBox="0 0 57 28" fill="#222222" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M56.458 27.23c-5.204 0-9.428-4.23-9.428-9.44v-3.37C47.03 7.01 41.027 1 33.627 1H22.83C15.43 1 9.428 7.01 9.428 14.42v3.37c0 5.21-4.225 9.44-9.428 9.44" stroke="#fff" /></svg>
-                <div className="h-px bg-white w-2 -translate-x-0.5"></div>
+                <div className="h-px bg-white grow dark:bg-eerie-black"></div>
+                <svg width="57" height="28" viewBox="0 0 57 28" className="fill-eerie-black dark:fill-floral-white stroke-floral-white dark:stroke-eerie-black" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M56.458 27.23c-5.204 0-9.428-4.23-9.428-9.44v-3.37C47.03 7.01 41.027 1 33.627 1H22.83C15.43 1 9.428 7.01 9.428 14.42v3.37c0 5.21-4.225 9.44-9.428 9.44" /></svg>
+                <div className="h-px bg-white w-2 -translate-x-0.5 dark:bg-eerie-black"></div>
               </div>
             </div>
-            <button className="absolute bottom-full cursor-pointer size-10 flex items-center justify-center right-4 pt-5 border-b border-eerie-black">
-              <img src={arrowUpIcon.src} alt="" />
+            <button className="absolute bottom-full cursor-pointer size-10 flex items-center justify-center right-4 pt-5 border-b border-eerie-black dark:border-floral-white">
+              <img src={arrowUpIcon.src} className="dark:hidden" alt="" />
+              <img src={arrowUpBlackIcon.src} className="hidden dark:block" alt="" />
             </button>
             <p className="line-clamp-2">{description}</p>
           </div>
@@ -98,16 +100,17 @@ const RoomImage: FC<RoomImageProps> = ({ id }) => {
         <Drawer.Portal>
           <Drawer.Overlay className="fixed inset-0 bg-eerie-black/40 z-10" />
           <Drawer.Content className="flex flex-col mt-24 h-[80%] fixed bottom-0 left-0 right-0 outline-none z-10">
-            <div className="py-4 px-6 bg-eerie-black flex-1 overflow-y-auto">
+            <div className="py-4 px-6 bg-eerie-black flex-1 overflow-y-auto dark:bg-floral-white">
               <div className="max-w-md mx-auto">
                 <div aria-hidden className="absolute w-full left-0 -top-7">
                   <div className="flex w-full items-baseline">
-                    <div className="h-px bg-white grow"></div>
-                    <svg width="57" height="28" viewBox="0 0 57 28" fill="#222222" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M56.458 27.23c-5.204 0-9.428-4.23-9.428-9.44v-3.37C47.03 7.01 41.027 1 33.627 1H22.83C15.43 1 9.428 7.01 9.428 14.42v3.37c0 5.21-4.225 9.44-9.428 9.44" stroke="#fff" /></svg>
-                    <div className="h-px bg-white w-2 -translate-x-0.5"></div>
+                    <div className="h-px bg-white grow dark:bg-eerie-black"></div>
+                    <svg width="57" height="28" viewBox="0 0 57 28" className="fill-eerie-black dark:fill-floral-white stroke-floral-white dark:stroke-eerie-black" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M56.458 27.23c-5.204 0-9.428-4.23-9.428-9.44v-3.37C47.03 7.01 41.027 1 33.627 1H22.83C15.43 1 9.428 7.01 9.428 14.42v3.37c0 5.21-4.225 9.44-9.428 9.44" /></svg>
+                    <div className="h-px bg-white w-2 -translate-x-0.5 dark:bg-eerie-black"></div>
                   </div>
-                  <Drawer.Close className="absolute cursor-pointer size-10 flex items-center justify-center right-4 border-b border-eerie-black -top-6 translate-y-1/2">
-                    <img src={arrowUpIcon.src} className="rotate-180" alt="" />
+                  <Drawer.Close className="absolute cursor-pointer size-10 flex items-center justify-center right-4 border-b border-eerie-black -top-6 translate-y-1/2 dark:border-floral-white">
+                    <img src={arrowUpIcon.src} className="dark:hidden rotate-180" alt="" />
+                    <img src={arrowUpBlackIcon.src} className="hidden dark:block rotate-180" alt="" />
                   </Drawer.Close>
                 </div>
                 <VisuallyHidden.Root>

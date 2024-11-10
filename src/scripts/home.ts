@@ -29,6 +29,8 @@ const swiper = new Swiper(".swiper-root", options);
 
 const roomsObserverCallback: IntersectionObserverCallback = (entries) => {
   entries.forEach((entry) => {
+    console.log(entry);
+
     const roomId = (entry.target as HTMLElement).id;
     if (!tabs.has(roomId)) {
       const selector = `[data-room=${roomId}]`;
