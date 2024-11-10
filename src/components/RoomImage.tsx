@@ -1,5 +1,4 @@
 import { useState, type FC } from "react"
-import Section from "./Section"
 import fullscreenIcon from "../icons/fullscreen.svg"
 import * as Dialog from "@radix-ui/react-dialog";
 import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
@@ -8,21 +7,43 @@ import { Drawer } from "vaul";
 import arrowUpIcon from '../icons/arrow-up.svg'
 import xIcon from '../icons/x.svg'
 import clsx from "clsx";
+import { getImageMetadata } from "../scripts/gallery";
+import { saveAs } from 'file-saver'
 
 type RoomImageProps = {
-  image: string
-  room: string
+  id: string
 }
 
-const RoomImage: FC<RoomImageProps> = ({ image, room }) => {
+const RoomImage: FC<RoomImageProps> = ({ id }) => {
   const [animationEnded, setAnimationEnded] = useState<Boolean | null>()
+  const data = getImageMetadata(id)
+
+  if (!data) {
+    return null
+  }
+
+  const { metadata, csv } = data
+
+  const { 'Descripción': description, Imagen: image, Fecha: date, 'Fotógrafa': author, Fuente: source, 'Cobertura geográfica': place, 'Técnica': technique, 'Declaración de derechos': copyright, 'Soporte físico': support } = metadata
+
+  const downloadCSV = () => {
+    const csvContent = csv
+      .filter(([_, value]) => value.trim() !== "")
+      .map(([key, value]) => `"${key}","${value.replace(/"/g, '""')}"`)
+      .join("\n");
+
+    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+
+    saveAs(blob, "data.csv");
+  };
+
 
   return (
     <>
       <div className="relative">
         <img
           src={image}
-          alt={room}
+          alt={description}
           className="w-full max-w-lg h-auto shadow-lg"
         />
         <Dialog.Root>
@@ -46,10 +67,10 @@ const RoomImage: FC<RoomImageProps> = ({ image, room }) => {
               <TransformWrapper centerOnInit>
                 <TransformComponent wrapperStyle={{
                   width: '100dvw'
-                }} contentStyle={{ width: '100%'}}>
+                }} contentStyle={{ width: '100%' }}>
                   <img
                     src={image}
-                    alt={room}
+                    alt={description}
                     className="mx-auto"
                   />
                 </TransformComponent>
@@ -71,7 +92,7 @@ const RoomImage: FC<RoomImageProps> = ({ image, room }) => {
             <button className="absolute bottom-full cursor-pointer size-10 flex items-center justify-center right-4 pt-5 border-b border-eerie-black">
               <img src={arrowUpIcon.src} alt="" />
             </button>
-            <span>La mano descansa sobre el torso de una mujer, de la cual solo se observa esta sección del cuerpo.</span>
+            <p className="line-clamp-2">{description}</p>
           </div>
         </Drawer.Trigger>
         <Drawer.Portal>
@@ -90,46 +111,56 @@ const RoomImage: FC<RoomImageProps> = ({ image, room }) => {
                   </Drawer.Close>
                 </div>
                 <VisuallyHidden.Root>
-                  <Drawer.Title>Detalle fotografía</Drawer.Title>
+                  <Drawer.Title>Detalle {id}</Drawer.Title>
+                  <Drawer.Description>{description}</Drawer.Description>
                 </VisuallyHidden.Root>
                 <div className="space-y-5">
-                  <p>Mujer sentada en una mecedora, inclinada hacia adelante, con su cabeza baja y las manos reposando suavemente sobre la silla en la que se está sentada. La figura está iluminada desde atrás, lo que crea un efecto de contraluz que perfila su silueta de manera clara. El fondo de la imagen está compuesto por una estructura geométrica que parece una ventana con divisiones rectangulares, lo que añade un contraste interesante entre la rigidez de las líneas y la suavidad del cuerpo relajado de la mujer. La mujer fotografiada es Saskia Esbra, hija de la artista. La fotografía habla del espacio privado y la intimidad femenina. El uso del contraluz no solo perfila su figura, sino que también la oculta parcialmente, lo que podría hablar sobre la agencia en la autorrepresentación, donde la figura no está completamente disponible para la mirada del espectador, manteniendo su autonomía y espacio personal.</p>
-                  <div className="space-y-1">
+                  <p>{description}</p>
+                  {date && <div className="space-y-1">
                     <h3 className="italic font-antarctican-mono">Fecha</h3>
-                    <p>1976</p>
-                  </div>
-                  <div className="space-y-1">
-                    <h3 className="italic font-antarctican-mono">Fotógrafa</h3>
-                    <p>Esbra, Ida, 1929-2009</p>
-                  </div>
-                  <div className="space-y-1">
-                    <h3 className="italic font-antarctican-mono">Fuente</h3>
-                    <p>Colección Jan y Saskia Esbra</p>
-                  </div>
-                  <div className="space-y-1">
-                    <h3 className="italic font-antarctican-mono">Fuente</h3>
-                    <p>Colección Jan y Saskia Esbra</p>
-                  </div>
-                  <div className="space-y-1">
-                    <h3 className="italic font-antarctican-mono">Cobertura geográfica</h3>
-                    <p>Barranquilla, Atlántico</p>
-                  </div>
-                  <div className="space-y-1">
-                    <h3 className="italic font-antarctican-mono">Soporte físico</h3>
-                    <p>Fotografía análoga</p>
-                  </div>
-                  <div className="space-y-1">
-                    <h3 className="italic font-antarctican-mono">Técnica</h3>
-                    <p>Gelatina de plata</p>
-                  </div>
-                  <div className="space-y-1">
-                    <h3 className="italic font-antarctican-mono">Declaración de derechos</h3>
-                    <p>© Derechos reservados. Herederos de Ida Esbra.</p>
-                  </div>
+                    <p>{date}</p>
+                  </div>}
+                  {author && (
+                    <div className="space-y-1">
+                      <h3 className="italic font-antarctican-mono">Fotógrafa</h3>
+                      <p>{author}</p>
+                    </div>
+                  )}
+                  {source && (
+                    <div className="space-y-1">
+                      <h3 className="italic font-antarctican-mono">Fuente</h3>
+                      <p>{source}</p>
+                    </div>
+                  )}
+                  {place && (
+                    <div className="space-y-1">
+                      <h3 className="italic font-antarctican-mono">Cobertura geográfica</h3>
+                      <p>{place}</p>
+                    </div>
+                  )}
+                  {support && (
+                    <div className="space-y-1">
+                      <h3 className="italic font-antarctican-mono">Soporte físico</h3>
+                      <p>{support}</p>
+                    </div>
+                  )}
+                  {technique && (
+                    <div className="space-y-1">
+                      <h3 className="italic font-antarctican-mono">Técnica</h3>
+                      <p>{technique}</p>
+                    </div>
+                  )}
+                  {copyright && (
+                    <div className="space-y-1">
+                      <h3 className="italic font-antarctican-mono">Declaración de derechos</h3>
+                      <p>{copyright}</p>
+                    </div>
+                  )}
                 </div>
                 <div className="flex justify-center mt-10">
-                  <button type="button" className="px-4 font-antarctican-mono uppercase border-b pb-2">
-                    Descargar metadatos
+                  <button className="px-4 font-antarctican-mono uppercase border-b pb-2 inline-flex items-center gap-4" onClick={() => downloadCSV()}>
+                    <span>Descargar metadatos</span>
+                    <img src={arrowUpIcon.src} className="size-4 rotate-180" alt="" />
                   </button>
                 </div>
               </div>
