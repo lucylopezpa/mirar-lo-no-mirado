@@ -63,21 +63,18 @@ import { Image } from "astro:assets";
       <div class="flex-grow overflow-y-auto flex flex-col justify-center">
         <ul class="border-y divide-y divide-floral-white">
           <li>
-            <button
-              class="px-6 flex items-center justify-between py-2"
-              type="button"
-              data-slide="3"
-              data-room="room-1"
+            <a
+              class="px-6 flex items-center justify-between py-2 w-full"
+              href="/?room=1"
             >
               <span class="text-xl italic">Fragmentos de lo femenino</span>
               <Image src={externalIcon} alt="" class="size-14" />
-            </button>
+            </a>
           </li>
           <li>
             <a
               class="px-6 flex items-center justify-between py-2"
-              href="/#room-2"
-              data-slide="4"
+              href="/?room=2"
             >
               <span class="text-xl italic">
                 Somos el resultado de lo que vemos
@@ -88,8 +85,7 @@ import { Image } from "astro:assets";
           <li>
             <a
               class="px-6 flex items-center justify-between py-2"
-              href="/#room-3"
-              data-slide="5"
+              href="/?room=3"
             >
               <span class="inline-flex flex-col">
                 <span class="text-xl italic">Caribe experimental</span>
