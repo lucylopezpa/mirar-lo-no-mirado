@@ -1,25 +1,33 @@
 ---
 import RoomImage from "../RoomImage";
-import RoomSection from "../RoomSection"
-import cover from '../../images/fragmentos-de-lo-femenino.jpg'
+import RoomSection from "../RoomSection";
+import RoomIntro from "../RoomIntro"
+import cover from "../../images/fragmentos-de-lo-femenino.jpg";
 import { Image } from "astro:assets";
+import Layered from "../Layered";
 ---
 
 <div class="swiper swiper-room w-full h-full" id="room-1">
-  <div class="js-room-header opacity-0 transition-opacity flex justify-between items-center px-6 mt-5">
+  <div
+    class="js-room-header opacity-0 transition-opacity flex justify-between items-center px-6 mt-5"
+  >
     <p class="italic w-full">Fragmentos de lo femenino</p>
-    <div class="room-pagination text-right shrink"></div>
+    <div class="room-pagination text-right shrink text-sm"></div>
   </div>
   <div class="swiper-wrapper">
     <div class="swiper-slide">
-      <RoomSection>
+      <RoomIntro>
         <h2>
-          <span class="block italic text-5xl">Fragmentos</span>
-          <span class="block italic text-5xl">de lo</span>
-          <span class="block text-7xl font-salo font-bold">femenino</span>
+          <span class="block italic text-4xl">Fragmentos de lo</span>
+          <span class="block text-6xl font-salo font-bold">femenino</span>
         </h2>
-        <Image src={cover} alt="Retrato de una niña que mira directamente a la cámara desde el interior de una vivienda con paredes de madera y techo de palma. Su expresión es serena, con los brazos cruzados apoyados en el borde de una ventana. La imagen fue capturada en el corregimiento de Barranquillita, en el municipio de Chigorodó." />
-      </RoomSection>
+        <Layered
+          background="/images/room-1-start.jpg"
+          foreground="/images/room-1-end.jpg"
+          alt="Retrato de una niña que mira directamente a la cámara desde el interior de una vivienda con paredes de madera y techo de palma. Su expresión es serena, con los brazos cruzados apoyados en el borde de una ventana. La imagen fue capturada en el corregimiento de Barranquillita, en el municipio de Chigorodó."
+          client:load
+        />
+      </RoomIntro>
     </div>
     <div class="swiper-slide">
       <RoomSection>
@@ -33,10 +41,7 @@ import { Image } from "astro:assets";
     </div>
     <div class="swiper-slide">
       <RoomSection className="relative">
-        <RoomImage
-          id="Fragmentos_14"
-          client:only="react"
-        />
+        <RoomImage id="Fragmentos_14" client:only="react" />
       </RoomSection>
     </div>
     <div class="swiper-slide">
@@ -55,10 +60,7 @@ import { Image } from "astro:assets";
     </div>
     <div class="swiper-slide">
       <RoomSection>
-        <RoomImage
-          id="Fragmentos_05"
-          client:only="react"
-        />
+        <RoomImage id="Fragmentos_05" client:only="react" />
       </RoomSection>
     </div>
     <div class="swiper-slide">
@@ -75,10 +77,7 @@ import { Image } from "astro:assets";
     </div>
     <div class="swiper-slide">
       <RoomSection>
-        <RoomImage
-          id="Fragmentos_10"
-          client:only="react"
-        />
+        <RoomImage id="Fragmentos_10" client:only="react" />
       </RoomSection>
     </div>
     <div class="swiper-slide">
@@ -97,10 +96,7 @@ import { Image } from "astro:assets";
     </div>
     <div class="swiper-slide">
       <RoomSection>
-        <RoomImage
-          id="Fragmentos_03"
-          client:only="react"
-        />
+        <RoomImage id="Fragmentos_03" client:only="react" />
       </RoomSection>
     </div>
     <div class="swiper-slide">

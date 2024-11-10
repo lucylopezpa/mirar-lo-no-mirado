@@ -163,7 +163,6 @@ const RoomImage: FC<RoomImageProps> = ({ id }) => {
                 <div className="flex justify-center mt-10">
                   <button className="px-4 font-antarctican-mono uppercase border-b pb-2 inline-flex items-center gap-4" onClick={() => downloadCSV()}>
                     <span>Descargar metadatos</span>
-                    <img src={arrowUpIcon.src} className="size-4 rotate-180" alt="" />
                   </button>
                 </div>
               </div>

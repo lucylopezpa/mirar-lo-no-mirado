@@ -1,6 +1,8 @@
 ---
 import RoomSection from "../RoomSection";
 import RoomImage from "../RoomImage";
+import Layered from "../Layered";
+import RoomIntro from "../RoomIntro";
 ---
 
 <div class="swiper swiper-room w-full h-full" id="room-3">
@@ -8,12 +10,22 @@ import RoomImage from "../RoomImage";
     class="js-room-header opacity-0 transition-opacity flex justify-between items-center px-6 mt-5"
   >
     <p class="italic w-full">Caribe experimental</p>
-    <div class="room-pagination text-right shrink"></div>
+    <div class="room-pagination text-right shrink text-sm"></div>
   </div>
   <div class="swiper-wrapper">
     <div class="swiper-slide">
-      <RoomSection>
-        <h2 class="text-9xl font-salo font-bold leading-[0.8]">
+      <RoomIntro>
+        <h2>
+          <span class="block text-6xl font-salo font-bold">Caribe</span>
+          <span class="block italic text-4xl">experimental</span>
+        </h2>
+        <Layered
+          background="/images/room-3-start.jpg"
+          foreground="/images/room-3-end.jpg"
+          alt="Retrato de una niña que mira directamente a la cámara desde el interior de una vivienda con paredes de madera y techo de palma. Su expresión es serena, con los brazos cruzados apoyados en el borde de una ventana. La imagen fue capturada en el corregimiento de Barranquillita, en el municipio de Chigorodó."
+          client:load
+        />
+        <!-- <h2 class="text-9xl font-salo font-bold leading-[0.8]">
           <span class="block">Ca</span>
           <span class="block">&nbsp;&nbsp;ri</span>
           <span class="block">&nbsp;&nbsp;&nbsp;&nbsp;be</span>
@@ -21,9 +33,9 @@ import RoomImage from "../RoomImage";
             <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
             <span class="text-5xl">experimental</span>
           </span>
-        </h2>
+        </h2> -->
         <!-- <img class="absolute" src="/demo.gif" alt=""> -->
-      </RoomSection>
+      </RoomIntro>
     </div>
     <div class="swiper-slide">
       <RoomSection>

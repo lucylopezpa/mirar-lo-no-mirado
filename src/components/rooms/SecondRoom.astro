@@ -1,21 +1,29 @@
 ---
 import RoomImage from "../RoomImage";
 import RoomSection from "../RoomSection";
+import Layered from "../Layered";
+import RoomIntro from "../RoomIntro";
 ---
 
 <div class="swiper swiper-room w-full h-full" id="room-2">
   <div class="js-room-header opacity-0 transition-opacity flex justify-between items-center px-6 mt-5">
     <p class="italic w-full">Somos el resultado de lo que vemos</p>
-    <div class="room-pagination text-right w-auto"></div>
+    <div class="room-pagination text-right w-auto text-sm"></div>
   </div>
   <div class="swiper-wrapper">
     <div class="swiper-slide">
-      <RoomSection>
+      <RoomIntro>
         <h2>
-          <span class="text-8xl font-salo font-bold block">Somos el resultado</span>
-          <span class="italic text-6xl">de lo que vemos</span>
+          <span class="text-6xl font-salo font-bold block">Somos el resultado</span>
+          <span class="italic text-4xl">de lo que vemos</span>
         </h2>
-      </RoomSection>
+        <Layered
+          background="/images/room-2-start.jpg"
+          foreground="/images/room-2-end.jpg"
+          alt="Dunas en Salgar. Premio Salón Atenas. Expuesta en el XXIV Salón Nacional de Artistas, Museo Nacional, Bogotá. La imagen presenta globos de diferentes colores y formas sobre las dunas de arena, cuyas líneas onduladas contrastan con las formas geométricas de los globos, completando la composición bajo un cielo azul despejado. En la fotografía, hay un juego con las texturas: lo rugoso de las dunas de arena contrasta con la superficie lisa y brillante de los globos. Las formas, texturas y disposición de los elementos en el paisaje parecen ir más allá de una simple captura, sugiriendo una mirada conceptual y surrealista."
+          client:load
+        />
+      </RoomIntro>
     </div>
     <div class="swiper-slide">
       <RoomSection>
