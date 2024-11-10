@@ -22,7 +22,6 @@
     "file-saver": "^2.0.5",
     "query-string": "^9.1.1",
     "react": "^18.3.1",
-    "react-csv-downloader": "^3.1.1",
     "react-dom": "^18.3.1",
     "react-zoom-pan-pinch": "^3.6.1",
     "swiper": "^11.1.14",
