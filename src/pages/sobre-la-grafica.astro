@@ -2,6 +2,7 @@
 import Footer from "../components/Footer.astro";
 import Figure from "../components/Figure.astro"
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Explorer from "../components/Explorer.astro";
 ---
 
 <BaseLayout title="Sobre la gráfica">
@@ -59,6 +60,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         una ventana temporal, permitiendo al usuario explorar en profundidad sin
         perder la experiencia visual principal.
       </p>
+    </div>
+    <div class="mt-12">
+      <h3 class="text-2xl italic">Elementos</h3>
+      <Explorer />
     </div>
   </div>
   <div class="mt-20">
