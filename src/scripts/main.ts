@@ -1,6 +1,7 @@
 import Swiper from "swiper";
 import { Keyboard, Mousewheel, Pagination } from "swiper/modules";
 import type { SwiperOptions } from "swiper/types";
+import { getSlideIndex, roomConfigs, type Slider } from "./utils";
 
 const options: SwiperOptions = {
   modules: [Mousewheel, Keyboard, Pagination],
@@ -17,7 +18,7 @@ const options: SwiperOptions = {
 };
 
 const mobileMenu = document.getElementById("mobile-menu");
-const rooms = document.querySelectorAll(".swiper-room");
+const rooms = document.querySelectorAll<HTMLElement>(".swiper-room");
 const roomsNav = document.getElementById("rooms-nav");
 const root = document.documentElement;
 const roomsAnchor = Array.from(document.querySelectorAll(".js-room-anchor"));
@@ -27,17 +28,17 @@ const tabs = new Map<string, HTMLButtonElement>();
 const swiper = new Swiper(".swiper-root", options);
 
 // Handle room navigation from navbar menu
-if (location.hash) {
-  console.log();
+// if (location.hash) {
+//   console.log();
 
-  const room = location.hash.slice(-1);
-  if (!Number.isNaN(room)) {
-    // Note this is hacky, but it does the job
-    const slide = +room + 2;
-    swiper.slideTo(slide);
-    closeMenuAfterNavigation()
-  }
-}
+//   const room = location.hash.slice(-1);
+//   if (!Number.isNaN(room)) {
+//     // Note this is hacky, but it does the job
+//     const slide = +room + 2;
+//     swiper.slideTo(slide);
+//     closeMenuAfterNavigation()
+//   }
+// }
 
 const roomsObserverCallback: IntersectionObserverCallback = (entries) => {
   entries.forEach((entry) => {
@@ -87,8 +88,19 @@ rooms.forEach((room) => {
 roomsAnchor.forEach((el) => {
   el.addEventListener("click", () => {
     const slide = (el as HTMLElement).dataset.slide as string;
+    const room = (el as HTMLElement).dataset.room as string;
+    const config = roomConfigs.find((config) => config.room === room);
+
+    if (config) {
+      console.log(config.room.toUpperCase());
+      config.slideIndices.forEach((index, idx) => {
+        const slider = rooms[idx] as Slider;
+        slider.swiper.slideTo(getSlideIndex(slider, index));
+      });
+    }
+
     swiper.slideTo(+slide);
-    closeMenuAfterNavigation()
+    closeMenuAfterNavigation();
   });
 });
 
@@ -96,9 +108,9 @@ swiper.on("slideChange", ({ activeIndex, realIndex }) => {
   roomsNav?.classList.toggle("opacity-0", activeIndex < 3);
 });
 
-window.addEventListener('popstate', function (e) {
-  closeMenuAfterNavigation()
-})
+window.addEventListener("popstate", function (e) {
+  // closeMenuAfterNavigation()
+});
 
 function closeMenuAfterNavigation() {
   if (!mobileMenu?.className.includes("hidden")) {

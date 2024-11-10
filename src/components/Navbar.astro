@@ -63,14 +63,15 @@ import { Image } from "astro:assets";
       <div class="flex-grow overflow-y-auto flex flex-col justify-center">
         <ul class="border-y divide-y divide-floral-white">
           <li>
-            <a
+            <button
               class="px-6 flex items-center justify-between py-2"
-              href="/#room-1"
+              type="button"
               data-slide="3"
+              data-room="room-1"
             >
               <span class="text-xl italic">Fragmentos de lo femenino</span>
               <Image src={externalIcon} alt="" class="size-14" />
-            </a>
+            </button>
           </li>
           <li>
             <a
