@@ -1,8 +1,15 @@
-import { useEffect, useRef, useState, type FC } from "react"
-import { useIntersectionObserver } from "usehooks-ts";
+
+import clsx from "clsx"
+import { useEffect, useRef, type DetailedHTMLProps, type FC, type HTMLAttributes } from "react"
 import ScrollMagic from 'scrollmagic'
 
-const Layered: FC<{ background: string; foreground: string; alt?: string }> = ({ background, foreground, alt = "" }) => {
+interface LayeredProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+  background: string
+  foreground: string
+  alt?: string
+}
+
+const Layered: FC<LayeredProps> = ({ background, foreground, alt = "", className = 'relative' }) => {
   const controller = new ScrollMagic.Controller({
     vertical: false,
   })
@@ -26,9 +33,9 @@ const Layered: FC<{ background: string; foreground: string; alt?: string }> = ({
   }, [foregroundRef])
 
   return (
-    <div className="relative">
-      <img src={background} alt={alt} />
-      <img src={foreground} className="absolute top-0 left-0" style={{ opacity: '0' }} ref={foregroundRef} alt={alt} />
+    <div className={clsx(className)}>
+      <img className="w-full h-auto" src={background} alt={alt} />
+      <img src={foreground} className="absolute top-0 left-0 w-full h-auto" style={{ opacity: '0' }} ref={foregroundRef} alt={alt} />
     </div>
   )
 }

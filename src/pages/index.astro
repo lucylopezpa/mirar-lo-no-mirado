@@ -5,21 +5,40 @@ import Section from "../components/Section";
 import FirstRoom from "../components/rooms/FirstRoom.astro";
 import SecondRoom from "../components/rooms/SecondRoom.astro";
 import ThirdRoom from "../components/rooms/ThirdRoom.astro";
-import arrowRightIcon from "../icons/arrow-right.svg"
-import externalIcon from "../icons/external.svg"
+import arrowRightIcon from "../icons/arrow-right.svg";
+import externalIcon from "../icons/external.svg";
 import "swiper/css/bundle";
 import { Image } from "astro:assets";
+import Layered from "../components/Layered";
 ---
 
 <BaseLayout title="Ida Esbra">
-  <nav class="font-antarctican-mono uppercase flex justify-between px-6 opacity-0" id="rooms-nav">
-    <button type="button" class="js-room-anchor" data-room="room-1" data-slide="3">
+  <nav
+    class="font-antarctican-mono uppercase flex justify-between px-6 opacity-0"
+    id="rooms-nav"
+  >
+    <button
+      type="button"
+      class="js-room-anchor"
+      data-room="room-1"
+      data-slide="3"
+    >
       Sala 1
     </button>
-    <button type="button" class="js-room-anchor" data-room="room-2" data-slide="4">
+    <button
+      type="button"
+      class="js-room-anchor"
+      data-room="room-2"
+      data-slide="4"
+    >
       Sala 2
     </button>
-    <button type="button" class="js-room-anchor" data-room="room-3" data-slide="5">
+    <button
+      type="button"
+      class="js-room-anchor"
+      data-room="room-3"
+      data-slide="5"
+    >
       Sala 3
     </button>
   </nav>
@@ -32,6 +51,13 @@ import { Image } from "astro:assets";
             Mirar lo no mirado
           </h1>
           <div class="relative h-full">
+            <Layered
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full"
+              background="/images/cover-start.jpg"
+              foreground="/images/cover-end.jpg"
+              alt="Mujer sentada en una mecedora, inclinada hacia adelante, con su cabeza baja y las manos reposando suavemente sobre la silla en la que se está sentada. La figura está iluminada desde atrás, lo que crea un efecto de contraluz que perfila su silueta de manera clara. El fondo de la imagen está compuesto por una estructura geométrica que parece una ventana con divisiones rectangulares, lo que añade un contraste interesante entre la rigidez de las líneas y la suavidad del cuerpo relajado de la mujer. La mujer fotografiada es Saskia Esbra, hija de la artista. El uso del contraluz no solo perfila su figura, sino que también la oculta parcialmente, lo que podría hablar sobre la agencia en la autorrepresentación, donde la figura no está completamente disponible para la mirada del espectador, manteniendo su autonomía y espacio personal."
+              client:only="react"
+            />
             <div
               class="text-7xl font-bold font-salo flex flex-col grow shrink relative h-full"
             >
@@ -55,7 +81,11 @@ import { Image } from "astro:assets";
             </div>
           </div>
           <p class="text-2xl italic shrink-0 py-2">
-            Ida Esbra y la fotografía experimental del Caribe colombiano <Image src={arrowRightIcon} class="animate-pulse inline-block" alt="" />
+            Ida Esbra y la fotografía experimental del Caribe colombiano <Image
+              src={arrowRightIcon}
+              class="animate-pulse inline-block"
+              alt=""
+            />
           </p>
         </Section>
       </div>
@@ -128,7 +158,10 @@ import { Image } from "astro:assets";
                 </a>
               </li>
               <li>
-                <a href="/aviso-legal" class="flex items-center justify-between px-6 py-2">
+                <a
+                  href="/aviso-legal"
+                  class="flex items-center justify-between px-6 py-2"
+                >
                   <span class="text-4xl">Aviso legal</span>
                   <Image src={externalIcon} class="size-14" alt="" />
                 </a>
