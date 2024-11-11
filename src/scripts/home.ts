@@ -15,9 +15,10 @@ const options: SwiperOptions = {
   },
 };
 
+const root = document.documentElement;
 const rooms = document.querySelectorAll<HTMLElement>(".swiper-room");
 const roomsNav = document.getElementById("rooms-nav");
-const root = document.documentElement;
+const next = document.querySelector("button.next")
 const roomsAnchor = Array.from(document.querySelectorAll(".js-room-anchor"));
 
 const tabs = new Map<string, HTMLButtonElement>();
@@ -92,6 +93,10 @@ roomsAnchor.forEach((el) => {
 swiper.on("slideChange", ({ activeIndex }) => {
   roomsNav?.classList.toggle("opacity-0", activeIndex < 3);
 });
+
+next?.addEventListener('click', () => {
+  swiper.slideNext()
+})
 
 document.addEventListener("DOMContentLoaded", () => {
   const search = queryString.parse(location.search);
