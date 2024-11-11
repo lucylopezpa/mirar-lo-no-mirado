@@ -3,6 +3,8 @@ import RoomImage from "../RoomImage";
 import RoomSection from "../RoomSection";
 import Layered from "../Layered";
 import RoomIntro from "../RoomIntro";
+
+const images = ["05", "07", "08", "09", "10", "11", "12", "13", "14", "18", "19"].map(id => `Somos_${id}`)
 ---
 
 <div class="swiper swiper-room w-full h-full" id="room-2">
@@ -133,5 +135,12 @@ import RoomIntro from "../RoomIntro";
         </p>
       </RoomSection>
     </div>
+    {images.map(image => (
+      <div class="swiper-slide">
+        <RoomSection>
+          <RoomImage id={image} client:only="react" />
+        </RoomSection>
+      </div>
+    ))}
   </div>
 </div>
