@@ -2,8 +2,8 @@
 const { src, caption } = Astro.props;
 ---
 
-<figure class="relative right-1/2 left-1/2 w-screen -ml-[50vw] -mr-[50vw]">
-  <img src={src} alt="" />
+<figure>
+  <img src={src} class="w-full h-auto" alt="" />
   {
     caption && (
       <figcaption class="mt-4 px-6 font-antarctican-mono italic text-xs">

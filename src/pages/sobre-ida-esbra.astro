@@ -1,34 +1,46 @@
 ---
-import Figure from "../components/Figure.astro";
 import Footer from "../components/Footer.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Figure from "../components/Figure.astro";
 ---
 
 <BaseLayout title="Sobre Ida Esbra">
-  <div class="p-6">
-    <h1 class="text-7xl font-salo font-bold leading-[0.8]">
-      Sobre
-      <span class="block">Ida Esbra</span>
-    </h1>
-    <blockquote class="mt-12 text-3xl italic">
-      “Generalmente prefiero no dar títulos a mis obras con la intención de no
-      guiar a la persona que observa, es decir, para dejar en libertad a que
-      cada uno se imagine lo que quiera.”
-    </blockquote>
-    <p class="mt-4 text-sm">Ida Esbra (1978)</p>
-    <div class="text-base space-y-8 mt-12">
-      <p>
-        Ida Esbra (Ámsterdam, 1929 - Barranquilla, 2009) fue una artista
-        versátil cuya producción fotográfica reclama un lugar en la historia del
-        arte conceptual y experimental del Caribe colombiano.
-      </p>
+  <div class="grid grid-cols-[1fr_min(80ch,_calc(100%))_1fr] py-6 gap-y-8">
+    <div class="col-span-2 px-6">
+      <h1 class="text-7xl font-salo font-bold leading-[0.8]">
+        Sobre
+        <span class="block">Ida Esbra</span>
+      </h1>
+      <blockquote class="mt-12 text-3xl italic">
+        “Generalmente prefiero no dar títulos a mis obras con la intención de no
+        guiar a la persona que observa, es decir, para dejar en libertad a que
+        cada uno se imagine lo que quiera.”
+      </blockquote>
+      <p class="mt-4 text-sm">Ida Esbra (1978)</p>
+      <div class="text-base mt-12">
+        <p>
+          Ida Esbra (Ámsterdam, 1929 - Barranquilla, 2009) fue una artista
+          versátil cuya producción fotográfica reclama un lugar en la historia
+          del arte conceptual y experimental del Caribe colombiano.
+        </p>
+      </div>
+    </div>
+    <div class="col-span-full">
       <Figure src="/images/sobre-ida-1.jpg" />
+    </div>
+    <div class="col-span-2 px-6 space-y-8">
       <p>
         Aunque nacida en Europa, su obra está profundamente vinculada con el
         contexto cultural del Caribe colombiano, donde vivió gran parte de su
         vida y desarrolló una visión que combina la fotografía documental, el
         fotoconceptualismo y el surrealismo.
       </p>
+    </div>
+    <div class="col-span-full">
+      <iframe src="/aventura.html" class="w-full aspect-square" frameborder="0"
+      ></iframe>
+    </div>
+    <div class="col-span-2 px-6 space-y-8">
       <p>
         Esbra redefine la figura del fotógrafo como artista y autora autónoma,
         con una gramática visual particular en la que la fotografía es
@@ -36,6 +48,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         intención artística. A quince años de su muerte, su archivo nos invita a
         redescubrir su figura, sus imágenes, sus ideales, y todo aquello que la
         convirtió en una de las fotógrafas pioneras del siglo XX en Colombia.
+      </p>
+      <p>
+        <a class="underline" href="https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1Djjc1boRry2tsO7tfYklg7e0gGKiBc_sw0aJZRLCsGg&font=OldStandard&lang=es&initial_zoom=2&start_at_slide=1&height=650">Cronología de la vida y obra de Ida Esbra</a>
       </p>
       <h3 class="italic text-2xl">La colección fotográfica</h3>
       <p>
@@ -73,7 +88,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         invisible, lo público y lo privado, desafiando la representación
         tradicional de la mujer.
       </p>
+    </div>
+    <div class="col-span-full">
       <Figure src="/images/sobre-ida-2.jpg" />
+    </div>
+    <div class="col-span-2 px-6 space-y-8">
       <p>
         A primera vista el trabajo de Esbra puede ser visto como una
         contribución al diálogo sobre el arte conceptual, en el cual la artista
@@ -82,7 +101,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         blanco y negro que le valió el Primer Premio en el Salón de Artistas
         Costeños del Icetex (Fig.1).
       </p>
-      <Figure src="/images/sobre-ida-3.jpg" caption="Figura 1. Esbra, I. (1977). Triple." />
+    </div>
+    <div class="col-span-full">
+      <Figure
+        src="/images/sobre-ida-3.jpg"
+        caption="Figura 1. Esbra, I. (1977). Triple."
+      />
+    </div>
+    <div class="col-span-2 px-6 space-y-8">
       <p>
         A través de esta composición, Ida Esbra transforma la imagen en una
         herramienta de cuestionamiento, uniéndose a la línea de otros artistas,
@@ -98,7 +124,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         intersección de dos enfoques artísticos fundamentales: el
         fotoconceptualismo y el surrealismo.
       </p>
-      <Figure src="/images/sobre-ida-4.jpg" caption="Figura 2. Esbra, I. (1980). Sin título." />
+    </div>
+    <div class="col-span-full">
+      <Figure
+        src="/images/sobre-ida-4.jpg"
+        caption="Figura 2. Esbra, I. (1980). Sin título."
+      />
+    </div>
+    <div class="col-span-2 px-6 space-y-8">
       <p>
         En este autorretrato, Ida Esbra aparece atravesando el marco de una
         ventana, sosteniendo un paraguas decorado con mariposas. La escena, de
