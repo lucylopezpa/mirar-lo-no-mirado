@@ -1,7 +1,6 @@
 
 import clsx from "clsx"
 import { useEffect, useRef, type DetailedHTMLProps, type FC, type HTMLAttributes } from "react"
-import ScrollMagic from 'scrollmagic'
 
 interface LayeredProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   background: string
@@ -10,32 +9,43 @@ interface LayeredProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>,
 }
 
 const Layered: FC<LayeredProps> = ({ background, foreground, alt = "", className = 'relative' }) => {
-  const controller = new ScrollMagic.Controller({
-    vertical: false,
-  })
+  const containerRef = useRef<HTMLDivElement>(null)
   const foregroundRef = useRef<HTMLImageElement>(null)
 
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      console.log(entry);
+      if (entry.isIntersecting) {
+        const opacity = 1 - entry.intersectionRatio
+        // @ts-ignore
+        foregroundRef.current.style.opacity = Math.min(opacity * 5, 1)
+      }
+    })
+  }, {
+    threshold: [0.7, 0.8, 0.9, 1]
+  })
+
   useEffect(() => {
-    if (!foregroundRef.current) return
-    const scene = new ScrollMagic.Scene({
-      triggerElement: foregroundRef.current,
-      duration: '10%',
-      triggerHook: 'onLeave',
-    })
-    .addTo(controller)
-    scene.on("progress", function(event) {
-      // @ts-expect-error scrollmagic event is not _typed_
-      foregroundRef.current.style.opacity = event.progress
-    })
-    return () => {
-      scene.destroy()
+    if (containerRef.current) {
+      observer.observe(containerRef.current)
     }
-  }, [foregroundRef])
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current)
+      }
+    }
+  }, [])
 
   return (
-    <div className={clsx(className)}>
+    <div className={clsx(className)} ref={containerRef}>
       <img className="w-full h-auto" src={background} alt={alt} />
-      <img src={foreground} className="absolute top-0 left-0 w-full h-auto" style={{ opacity: '0' }} ref={foregroundRef} alt={alt} />
+      <img
+        ref={foregroundRef}
+        src={foreground}
+        className="absolute top-0 left-0 w-full h-auto"
+        style={{ opacity: '0' }}
+        alt={alt}
+      />
     </div>
   )
 }
