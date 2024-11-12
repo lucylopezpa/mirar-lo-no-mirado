@@ -10,6 +10,7 @@ import xIcon from '../icons/x.svg'
 import clsx from "clsx";
 import { getImageMetadata } from "../scripts/gallery";
 import { saveAs } from 'file-saver'
+import Markdown from 'react-markdown'
 
 type RoomImageProps = {
   id: string
@@ -118,7 +119,9 @@ const RoomImage: FC<RoomImageProps> = ({ id }) => {
                   <Drawer.Description>{description}</Drawer.Description>
                 </VisuallyHidden.Root>
                 <div className="space-y-5">
-                  <p>{description}</p>
+                  <Markdown>
+                    {description}
+                  </Markdown>
                   {date && <div className="space-y-1">
                     <h3 className="italic font-antarctican-mono">Fecha</h3>
                     <p>{date}</p>
