@@ -3,6 +3,7 @@ import RoomImage from "../RoomImage";
 import RoomSection from "../RoomSection";
 import Layered from "../Layered";
 import RoomIntro from "../RoomIntro";
+import Section from "../Section";
 
 const images = ["05", "07", "08", "09", "10", "11", "12", "13", "14", "18", "19"].map(id => `Somos_${id}`)
 ---
@@ -134,6 +135,17 @@ const images = ["05", "07", "08", "09", "10", "11", "12", "13", "14", "18", "19"
           21 de mayo.
         </p>
       </RoomSection>
+    </div>
+    <div class="swiper-slide">
+      <Section centerContent={false} className="overflow-y-auto">
+        <div class="columns-3 gap-1">
+          {images.map(image => (
+            <div>
+              <img src={`/images/salas/${image}.jpg`} alt="" />
+            </div>
+          ))}
+        </div>
+      </Section>
     </div>
     {images.map(image => (
       <div class="swiper-slide">
