@@ -14,7 +14,6 @@ const Layered: FC<LayeredProps> = ({ background, foreground, alt = "", className
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      console.log(entry);
       if (entry.isIntersecting) {
         const opacity = 1 - entry.intersectionRatio
         // @ts-ignore
