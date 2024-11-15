@@ -5,7 +5,7 @@ const images = new Map<string, any>();
 data.forEach((image) => {
   images.set(image.Identificador, {
     ...image,
-    Imagen: `/images/salas/${image.Identificador}.jpg`,
+    Imagen: `/idaesbra-mirarlonomirado/images/salas/${image.Identificador}.jpg`,
   });
 });
 
