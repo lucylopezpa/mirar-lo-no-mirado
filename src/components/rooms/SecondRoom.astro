@@ -30,14 +30,6 @@ const images = ["05", "07", "08", "09", "10", "11", "12", "13", "14", "18", "19"
     </div>
     <div class="swiper-slide">
       <RoomSection>
-        <RoomImage
-          id="Somos_06"
-          client:only="react"
-        />
-      </RoomSection>
-    </div>
-    <div class="swiper-slide">
-      <RoomSection>
         <blockquote class="italic text-3xl leading-tight">
           “el Conceptual-art o arte conceptual, en los cuales los medios se
           transforman con frecuencia en fines.”
@@ -50,20 +42,39 @@ const images = ["05", "07", "08", "09", "10", "11", "12", "13", "14", "18", "19"
     </div>
     <div class="swiper-slide">
       <RoomSection>
-        <RoomImage
-          id="Somos_04"
-          client:only="react"
-        />
-      </RoomSection>
-    </div>
-    <div class="swiper-slide">
-      <RoomSection>
         <p>
           En esta sala, la incertidumbre se convierte en el tema central: lo que
           vemos no siempre es lo que es. Los objetos, las figuras humanas y los
           paisajes se desdibujan, transformándose en símbolos de una verdad
           oculta, obligando al espectador a navegar entre lo real y lo irreal.
         </p>
+      </RoomSection>
+    </div>
+    <div class="swiper-slide">
+      <Section centerContent={false} className="overflow-y-auto">
+        <div class="columns-3 gap-1">
+          {images.map(image => (
+            <div>
+              <img src={`/idaesbra-mirarlonomirado/images/salas/${image}.jpg`} alt="" />
+            </div>
+          ))}
+        </div>
+      </Section>
+    </div>
+    <div class="swiper-slide">
+      <RoomSection>
+        <RoomImage
+          id="Somos_06"
+          client:only="react"
+        />
+      </RoomSection>
+    </div>
+    <div class="swiper-slide">
+      <RoomSection>
+        <RoomImage
+          id="Somos_04"
+          client:only="react"
+        />
       </RoomSection>
     </div>
     <div class="swiper-slide">
@@ -135,17 +146,6 @@ const images = ["05", "07", "08", "09", "10", "11", "12", "13", "14", "18", "19"
           21 de mayo.
         </p>
       </RoomSection>
-    </div>
-    <div class="swiper-slide">
-      <Section centerContent={false} className="overflow-y-auto">
-        <div class="columns-3 gap-1">
-          {images.map(image => (
-            <div>
-              <img src={`/idaesbra-mirarlonomirado/images/salas/${image}.jpg`} alt="" />
-            </div>
-          ))}
-        </div>
-      </Section>
     </div>
     {images.map(image => (
       <div class="swiper-slide">

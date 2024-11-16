@@ -72,14 +72,14 @@ rooms.forEach((room) => {
 const handleRoomNavigation = (room: string, slide: number) => {
   const config = roomConfigs.find((config) => config.room === room);
 
+  swiper.slideTo(slide, 0);
+
   if (config) {
     config.slideIndices.forEach((index, idx) => {
       const slider = rooms[idx] as Slider;
-      slider.swiper.slideTo(getSlideIndex(slider, index));
+      slider.swiper.slideTo(getSlideIndex(slider, index), 0);
     });
   }
-
-  swiper.slideTo(slide);
 };
 
 roomsAnchor.forEach((el) => {

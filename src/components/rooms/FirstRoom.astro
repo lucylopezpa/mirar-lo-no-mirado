@@ -41,6 +41,17 @@ const images = ["01", "02", "04", "07", "08", "09", "11", "12", "13", "15", "16"
       </RoomSection>
     </div>
     <div class="swiper-slide">
+      <Section centerContent={false} className="overflow-y-auto">
+        <div class="columns-3 gap-1">
+          {images.map(image => (
+            <div>
+              <img src={`/idaesbra-mirarlonomirado/images/salas/${image}.jpg`} alt="" />
+            </div>
+          ))}
+        </div>
+      </Section>
+    </div>
+    <div class="swiper-slide">
       <RoomSection className="relative">
         <RoomImage id="Fragmentos_14" client:only="react" />
       </RoomSection>
@@ -111,17 +122,6 @@ const images = ["01", "02", "04", "07", "08", "09", "11", "12", "13", "15", "16"
           representación y la visión: ¿Qué significa mirar sin ser visto?
         </p>
       </RoomSection>
-    </div>
-    <div class="swiper-slide">
-      <Section centerContent={false} className="overflow-y-auto">
-        <div class="columns-3 gap-1">
-          {images.map(image => (
-            <div>
-              <img src={`/idaesbra-mirarlonomirado/images/salas/${image}.jpg`} alt="" />
-            </div>
-          ))}
-        </div>
-      </Section>
     </div>
     {images.map(image => (
       <div class="swiper-slide">

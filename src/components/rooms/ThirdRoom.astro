@@ -55,20 +55,31 @@ const images = ["01", "02", "03", "05", "08", "09", "10", "11", "12", "13", "14"
     </div>
     <div class="swiper-slide">
       <RoomSection>
-        <RoomImage
-          id="Caribe_06"
-          client:only="react"
-        />
-      </RoomSection>
-    </div>
-    <div class="swiper-slide">
-      <RoomSection>
         <p>
           Lejos de las narrativas que presentan un Caribe exuberante y colorido,
           Esbra traza un territorio lleno de contradicciones y resistencias,
           donde la soledad, el desgaste y la memoria encuentran un espacio para
           asistir a un diálogo visual que cuestiona lo que damos por sentado.
         </p>
+      </RoomSection>
+    </div>
+    <div class="swiper-slide">
+      <Section centerContent={false} className="overflow-y-auto">
+        <div class="columns-3 gap-1">
+          {images.map(image => (
+            <div>
+              <img src={`/idaesbra-mirarlonomirado/images/salas/${image}.jpg`} alt="" />
+            </div>
+          ))}
+        </div>
+      </Section>
+    </div>
+    <div class="swiper-slide">
+      <RoomSection>
+        <RoomImage
+          id="Caribe_06"
+          client:only="react"
+        />
       </RoomSection>
     </div>
     <div class="swiper-slide">
@@ -109,17 +120,6 @@ const images = ["01", "02", "03", "05", "08", "09", "10", "11", "12", "13", "14"
           espacio.
         </p>
       </RoomSection>
-    </div>
-    <div class="swiper-slide">
-      <Section centerContent={false} className="overflow-y-auto">
-        <div class="columns-3 gap-1">
-          {images.map(image => (
-            <div>
-              <img src={`/idaesbra-mirarlonomirado/images/salas/${image}.jpg`} alt="" />
-            </div>
-          ))}
-        </div>
-      </Section>
     </div>
     {images.map(image => (
       <div class="swiper-slide">
