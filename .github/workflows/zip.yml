@@ -26,6 +26,7 @@ jobs:
 
       - name: Zip Files
         run: |
+          rm idaesbra-mirarlonomirado.zip
           zip -r idaesbra-mirarlonomirado.zip dist
 
       - name: Commit and Push

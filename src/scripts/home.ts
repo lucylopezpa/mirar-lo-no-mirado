@@ -8,11 +8,11 @@ const options: SwiperOptions = {
   modules: [Mousewheel, Pagination],
   direction: "horizontal",
   loop: false,
-  speed: 700,
   mousewheel: {
     enabled: true,
     forceToAxis: true,
   },
+  cssMode: true,
 };
 
 const root = document.documentElement;
@@ -48,6 +48,7 @@ const observer = new IntersectionObserver(roomsObserverCallback, {
 });
 
 rooms.forEach((room) => {
+  const roomHeader = room.querySelector(".js-room-header");
   const swiper = new Swiper(room as HTMLElement, {
     ...options,
     nested: true,
@@ -62,10 +63,11 @@ rooms.forEach((room) => {
       },
     },
   });
-  const roomHeader = room.querySelector(".js-room-header");
-  swiper.on("slideChangeTransitionStart", (s) => {
+
+  swiper.on("slideChange", (s) => {
     roomHeader?.classList.toggle("opacity-0", s.activeIndex < 1);
   });
+
   observer.observe(room);
 });
 

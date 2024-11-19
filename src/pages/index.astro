@@ -10,6 +10,8 @@ import externalIcon from "../icons/external.svg";
 import "swiper/css/bundle";
 import { Image } from "astro:assets";
 import Layered from "../components/Layered";
+import coverStart from "../images/cover-start.jpg"
+import coverEnd from "../images/cover-end.jpg"
 ---
 
 <BaseLayout title="Ida Esbra">
@@ -53,8 +55,8 @@ import Layered from "../components/Layered";
           <div class="relative h-full">
             <Layered
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full"
-              background="/idaesbra-mirarlonomirado/images/cover-start.jpg"
-              foreground="/idaesbra-mirarlonomirado/images/cover-end.jpg"
+              background={coverStart.src}
+              foreground={coverEnd.src}
               alt="Mujer sentada en una mecedora, inclinada hacia adelante, con su cabeza baja y las manos reposando suavemente sobre la silla en la que se está sentada. La figura está iluminada desde atrás, lo que crea un efecto de contraluz que perfila su silueta de manera clara. El fondo de la imagen está compuesto por una estructura geométrica que parece una ventana con divisiones rectangulares, lo que añade un contraste interesante entre la rigidez de las líneas y la suavidad del cuerpo relajado de la mujer. La mujer fotografiada es Saskia Esbra, hija de la artista. El uso del contraluz no solo perfila su figura, sino que también la oculta parcialmente, lo que podría hablar sobre la agencia en la autorrepresentación, donde la figura no está completamente disponible para la mirada del espectador, manteniendo su autonomía y espacio personal."
               client:only="react"
             />
