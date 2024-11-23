@@ -31,7 +31,7 @@ const RoomImage: FC<RoomImageProps> = ({ id }) => {
   const downloadCSV = () => {
     const csvContent = csv
       .filter(([_, value]) => value.trim() !== "")
-      .map(([key, value]) => `"${key}","${value.replace(/"/g, '""')}"`)
+      .map(([key, value]) => `"${key}";"${value.replace(/"/g, '""')}"`)
       .join("\n");
 
     const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });

@@ -3,7 +3,7 @@ import RoomImage from "../RoomImage";
 import RoomSection from "../RoomSection";
 import Layered from "../Layered";
 import RoomIntro from "../RoomIntro";
-import Section from "../Section";
+// import Section from "../Section";
 
 const images = ["05", "07", "08", "09", "10", "11", "12", "13", "14", "18", "19"].map(id => `Somos_${id}`)
 ---
@@ -30,6 +30,16 @@ const images = ["05", "07", "08", "09", "10", "11", "12", "13", "14", "18", "19"
     </div>
     <div class="swiper-slide">
       <RoomSection>
+        <p>
+          En esta sala, la incertidumbre se convierte en el tema central: lo que
+          vemos no siempre es lo que es. Los objetos, las figuras humanas y los
+          paisajes se desdibujan, transformándose en símbolos de una verdad
+          oculta, obligando al espectador a navegar entre lo real y lo irreal.
+        </p>
+      </RoomSection>
+    </div>
+    <div class="swiper-slide">
+      <RoomSection>
         <blockquote class="italic text-3xl leading-tight">
           “el Conceptual-art o arte conceptual, en los cuales los medios se
           transforman con frecuencia en fines.”
@@ -40,17 +50,7 @@ const images = ["05", "07", "08", "09", "10", "11", "12", "13", "14", "18", "19"
         </p>
       </RoomSection>
     </div>
-    <div class="swiper-slide">
-      <RoomSection>
-        <p>
-          En esta sala, la incertidumbre se convierte en el tema central: lo que
-          vemos no siempre es lo que es. Los objetos, las figuras humanas y los
-          paisajes se desdibujan, transformándose en símbolos de una verdad
-          oculta, obligando al espectador a navegar entre lo real y lo irreal.
-        </p>
-      </RoomSection>
-    </div>
-    <div class="swiper-slide">
+    <!-- <div class="swiper-slide">
       <Section centerContent={false} className="overflow-y-auto">
         <div class="columns-3 gap-1">
           {images.map(image => (
@@ -60,7 +60,7 @@ const images = ["05", "07", "08", "09", "10", "11", "12", "13", "14", "18", "19"
           ))}
         </div>
       </Section>
-    </div>
+    </div> -->
     <div class="swiper-slide">
       <RoomSection>
         <RoomImage

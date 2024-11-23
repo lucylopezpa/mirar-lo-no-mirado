@@ -3,7 +3,7 @@ import RoomImage from "../RoomImage";
 import RoomSection from "../RoomSection";
 import RoomIntro from "../RoomIntro"
 import Layered from "../Layered";
-import Section from "../Section";
+// import Section from "../Section";
 
 const images = ["01", "02", "04", "07", "08", "09", "11", "12", "13", "15", "16", "17", "18", "19", "20", "21"].map(id => `Fragmentos_${id}`)
 ---
@@ -34,13 +34,13 @@ const images = ["01", "02", "04", "07", "08", "09", "11", "12", "13", "15", "16"
       <RoomSection>
         <p>
           Las mujeres que plasma Ida Esbra parecen cargar con el peso de
-          narrativas invisibles. Lo femenino se enraíza en lo cotidiano. Sus
+          narrativas invisibles. Lo femenino se enraiza en lo cotidiano. Sus
           mujeres no son sujetos pasivos, sino cuerpos que fragmentan la mirada
           invitándonos a cuestionar las narrativas visuales del cuerpo femenino.
         </p>
       </RoomSection>
     </div>
-    <div class="swiper-slide">
+    <!-- <div class="swiper-slide">
       <Section centerContent={false} className="overflow-y-auto">
         <div class="columns-3 gap-1">
           {images.map(image => (
@@ -50,7 +50,7 @@ const images = ["01", "02", "04", "07", "08", "09", "11", "12", "13", "15", "16"
           ))}
         </div>
       </Section>
-    </div>
+    </div> -->
     <div class="swiper-slide">
       <RoomSection className="relative">
         <RoomImage id="Fragmentos_14" client:only="react" />
@@ -97,7 +97,7 @@ const images = ["01", "02", "04", "07", "08", "09", "11", "12", "13", "15", "16"
         <blockquote class="italic text-3xl leading-tight">
           “acostumbraron a los artistas a tratar de encontrar en esa “realidad
           cotidiana” aspectos mágicos, sociales, que al hombre común pasaban
-          desapercibidos. Se estableció entonces la lucha por la búsqueda de “lo
+          desapercibidos. Se estableció entonces la lucha por la búsqueda de lo
           no manifestado de las cosas”.
         </blockquote>
         <p class="text-xs mt-10">
