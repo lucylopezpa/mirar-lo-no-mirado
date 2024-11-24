@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import Footer from "../components/Footer.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import externalIcon from "../icons/external.svg";
+import MetadataExplorer from "../components/MetadataExplorer.astro";
 ---
 
 <BaseLayout title="Sobre este proyecto">
@@ -113,6 +114,16 @@ import externalIcon from "../icons/external.svg";
         arte, cuestionando las representaciones tradicionales y ofreciendo un
         Caribe que es, a la vez, familiar y sorprendentemente.
       </p>
+      <div class="mt-12 space-y-8">
+        <h3 class="text-2xl italic">Metadatos</h3>
+        <p>Esta curaduría digital es un punto de partida para un proceso continuo de refinamiento y ampliación. Más que un producto finalizado, este espacio es una versión preliminar que invita a explorar las posibilidades de organización, análisis y acceso a la obra de Ida Esbra.</p>
+        <p>En este momento, los metadatos de la colección están disponibles para descarga en formato CSV, facilitando el acceso y la reutilización de la información en otros proyectos o investigaciones.</p>
+        <p>
+          <a class="underline" href="/idaesbra-mirarlonomirado/metadatos.csv" download="metadatos.csv">Descargar metadatos</a>
+        </p>
+        <p>Esta funcionalidad representa una primera aproximación a la interacción con el archivo, pero en el futuro busca expandir estas capacidades, permitiendo a los usuarios hacer consultas o búsquedas adentro de la colección. Como una demostración inicial, ofrecemos una versión beta que ilustra cómo podrían estructurarse estas herramientas.</p>
+        <MetadataExplorer />
+      </div>
       <div class="mt-12 space-y-8">
         <h3 class="text-2xl italic">Agradecimientos</h3>
         <p>

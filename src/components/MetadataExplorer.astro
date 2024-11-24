@@ -1,0 +1,325 @@
+<style is:inline>
+  #tag > button[data-active] {
+    background-color: rgba(255, 250, 244, 1);
+    color: #222222;
+  }
+  .gallery-image {
+    opacity: 0.2;
+    transition: opacity 0.3s ease;
+  }
+  .gallery-image.active {
+    opacity: 1;
+  }
+</style>
+
+<div class="space-y-2">
+  <h3 class="text-lg">Etiquetas</h3>
+  <div class="flex flex-wrap gap-2" id="tag">
+    <button
+      type="button"
+      data-tag="categoria"
+      class="border border-floral-white px-2 transition-colors"
+      data-active>Categoría dentro de la colección</button
+    >
+    <button
+      type="button"
+      data-tag="cobertura"
+      class="border border-floral-white px-2 transition-colors"
+      >Cobertura geográfica</button
+    >
+    <button
+      type="button"
+      data-tag="coloracion"
+      class="border border-floral-white px-2 transition-colors">Coloración</button
+    >
+    <button
+      type="button"
+      data-tag="materia"
+      class="border border-floral-white px-2 transition-colors">Materia</button
+    >
+  </div>
+</div>
+
+<div class="space-y-2">
+  <h3 class="text-lg">Filtros</h3>
+  <div class="flex flex-wrap gap-2" id='filters'>
+    <button
+      type="button"
+      data-tag="categoria"
+      data-filter="fragmentos"
+      class="border-b border-floral-white px-2">Fragmentos de lo femenino</button
+    >
+    <button
+      type="button"
+      data-tag="categoria"
+      data-filter="fotoconceptualismo"
+      class="border-b border-floral-white px-2">Fotoconceptualismo</button
+    >
+    <button
+      type="button"
+      data-tag="categoria"
+      data-filter="caribe"
+      class="border-b border-floral-white px-2">Caribe experimental</button
+    >
+    <button
+      type="button"
+      data-tag="cobertura"
+      data-filter="barranquilla"
+      class="border-b border-floral-white px-2">Barranquilla, Atlántico</button
+    >
+    <button
+      type="button"
+      data-tag="cobertura"
+      data-filter="guatavita"
+      class="border-b border-floral-white px-2">Guatavita, Cundinamarca</button
+    >
+    <button
+      type="button"
+      data-tag="cobertura"
+      data-filter="barranquillita"
+      class="border-b border-floral-white px-2">Barranquillita, Chigorodí</button
+    >
+    <button
+      type="button"
+      data-tag="coloracion"
+      data-filter="color"
+      class="border-b border-floral-white px-2">Color</button
+    >
+    <button
+      type="button"
+      data-tag="coloracion"
+      data-filter="bn"
+      class="border-b border-floral-white px-2">Blanco y negro</button
+    >
+    <button
+      type="button"
+      data-tag="materia"
+      data-filter="antropologia-visual"
+      class="border-b border-floral-white px-2">Antropología visual</button
+    >
+    <button
+      type="button"
+      data-tag="materia"
+      data-filter="cuerpo"
+      class="border-b border-floral-white px-2"
+      >Cuerpo femenino - Fotografías</button
+    >
+  </div>
+</div>
+
+<div class="mt-4" id="gallery">
+  <div class="columns-2 gap-0" data-parent-tag="categoria">
+    <div class="gallery-image" data-parent-filter="fragmentos">
+      <img
+        src="/idaesbra-mirarlonomirado/images/salas/Fragmentos_02.jpg"
+        alt=""
+      />
+    </div>
+    <div class="gallery-image" data-parent-filter="fotoconceptualismo">
+      <img src="/idaesbra-mirarlonomirado/images/salas/Somos_09.jpg" alt="" />
+    </div>
+    <div class="gallery-image" data-parent-filter="fragmentos">
+      <img
+        src="/idaesbra-mirarlonomirado/images/salas/Fragmentos_05.jpg"
+        alt=""
+      />
+    </div>
+    <div class="gallery-image" data-parent-filter="fragmentos">
+      <img
+        src="/idaesbra-mirarlonomirado/images/salas/Fragmentos_08.jpg"
+        alt=""
+      />
+    </div>
+    <div class="gallery-image" data-parent-filter="fotoconceptualismo">
+      <img src="/idaesbra-mirarlonomirado/images/salas/Somos_17.jpg" alt="" />
+    </div>
+    <div class="gallery-image" data-parent-filter="fotoconceptualismo">
+      <img src="/idaesbra-mirarlonomirado/images/salas/Somos_18.jpg" alt="" />
+    </div>
+    <div class="gallery-image" data-parent-filter="caribe">
+      <img src="/idaesbra-mirarlonomirado/images/salas/Caribe_02.jpg" alt="" />
+    </div>
+    <div class="gallery-image" data-parent-filter="caribe">
+      <img src="/idaesbra-mirarlonomirado/images/salas/Caribe_14.jpg" alt="" />
+    </div>
+  </div>
+  <div class="columns-2 gap-0" data-parent-tag="cobertura">
+    <div class="gallery-image" data-parent-filter="barranquilla">
+      <img src="/idaesbra-mirarlonomirado/images/salas/Caribe_01.jpg" alt="" />
+    </div>
+    <div class="gallery-image" data-parent-filter="barranquilla">
+      <img src="/idaesbra-mirarlonomirado/images/salas/Caribe_10.jpg" alt="" />
+    </div>
+    <div class="gallery-image" data-parent-filter="guatavita">
+      <img
+        src="/idaesbra-mirarlonomirado/images/salas/Fragmentos_12.jpg"
+        alt=""
+      />
+    </div>
+    <div class="gallery-image" data-parent-filter="barranquillita">
+      <img
+        src="/idaesbra-mirarlonomirado/images/salas/Fragmentos_21.jpg"
+        alt=""
+      />
+    </div>
+  </div>
+  <div class="columns-2 gap-0" data-parent-tag="coloracion">
+    <div class="gallery-image" data-parent-filter="color">
+      <img src="/idaesbra-mirarlonomirado/images/salas/Caribe_05.jpg" alt="" />
+    </div>
+    <div class="gallery-image" data-parent-filter="bn">
+      <img
+        src="/idaesbra-mirarlonomirado/images/salas/Fragmentos_05.jpg"
+        alt=""
+      />
+    </div>
+    <div class="gallery-image" data-parent-filter="bn">
+      <img
+        src="/idaesbra-mirarlonomirado/images/salas/Fragmentos_08.jpg"
+        alt=""
+      />
+    </div>
+  </div>
+  <div class="columns-2 gap-0" data-parent-tag="materia">
+    <div class="gallery-image" data-parent-filter="antropologia-visual">
+      <img
+        src="/idaesbra-mirarlonomirado/images/salas/Fragmentos_05.jpg"
+        alt=""
+      />
+    </div>
+    <div class="gallery-image" data-parent-filter="cuerpo">
+      <img
+        src="/idaesbra-mirarlonomirado/images/salas/Fragmentos_03.jpg"
+        alt=""
+      />
+    </div>
+    <div class="gallery-image" data-parent-filter="cuerpo">
+      <img
+        src="/idaesbra-mirarlonomirado/images/salas/Fragmentos_04.jpg"
+        alt=""
+      />
+    </div>
+    <div class="gallery-image" data-parent-filter="cuerpo">
+      <img
+        src="/idaesbra-mirarlonomirado/images/salas/Fragmentos_05.jpg"
+        alt=""
+      />
+    </div>
+    <div class="gallery-image" data-parent-filter="cuerpo">
+      <img
+        src="/idaesbra-mirarlonomirado/images/salas/Fragmentos_08.jpg"
+        alt=""
+      />
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const tagButtons = document.querySelectorAll<HTMLButtonElement>('#tag > button');
+  const filterButtons = document.querySelectorAll<HTMLButtonElement>('#filters > button');
+  const gallerySections = document.querySelectorAll<HTMLDivElement>('#gallery > div');
+
+  function updateActiveTag(activeTag: string): void {
+    tagButtons.forEach((btn) => {
+      if (btn.getAttribute('data-tag') === activeTag) {
+        btn.setAttribute('data-active', '');
+      } else {
+        btn.removeAttribute('data-active');
+      }
+    });
+
+    filterButtons.forEach((filter) => {
+      if (filter.getAttribute('data-tag') === activeTag) {
+        filter.style.display = 'inline-block';
+        filter.setAttribute('data-active', ''); // Make all filters active by default
+      } else {
+        filter.style.display = 'none';
+        filter.removeAttribute('data-active');
+      }
+    });
+
+    gallerySections.forEach((gallery) => {
+      if (gallery.getAttribute('data-parent-tag') === activeTag) {
+        gallery.style.display = 'block';
+      } else {
+        gallery.style.display = 'none';
+      }
+    });
+
+    updateGalleryImages(activeTag);
+    updateFilterStyles();
+  }
+
+  function updateGalleryImages(activeTag: string): void {
+    const activeFilters = Array.from(filterButtons)
+      .filter((filter) => filter.hasAttribute('data-active') && filter.getAttribute('data-tag') === activeTag)
+      .map((filter) => filter.getAttribute('data-filter')!);
+
+    const images = document.querySelectorAll<HTMLDivElement>(
+      `#gallery > div[data-parent-tag="${activeTag}"] .gallery-image`
+    );
+
+    images.forEach((image) => {
+      const imageFilter = image.getAttribute('data-parent-filter');
+      if (!imageFilter) return;
+
+      // No filters are active: dim all images
+      if (activeFilters.length === 0) {
+        image.classList.remove('active');
+        image.style.opacity = '0.2';
+      } else if (activeFilters.includes(imageFilter)) {
+        // Image matches an active filter
+        image.classList.add('active');
+        image.style.opacity = '1';
+      } else {
+        // Image doesn't match any active filter
+        image.classList.remove('active');
+        image.style.opacity = '0.2'; // Dimmed
+      }
+    });
+  }
+
+  function updateFilterStyles(): void {
+    filterButtons.forEach((filter) => {
+      if (filter.hasAttribute('data-active')) {
+        filter.classList.add('border-b');
+        filter.style.opacity = '1';
+      } else {
+        filter.classList.remove('border-b');
+        filter.style.opacity = '0.2';
+      }
+    });
+  }
+
+  tagButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const activeTag = button.getAttribute('data-tag');
+      if (!activeTag) return;
+
+      updateActiveTag(activeTag);
+    });
+  });
+
+  filterButtons.forEach((filter) => {
+    filter.addEventListener('click', () => {
+      if (filter.hasAttribute('data-active')) {
+        filter.removeAttribute('data-active');
+      } else {
+        filter.setAttribute('data-active', '');
+      }
+
+      const activeTag = document.querySelector<HTMLButtonElement>('#tag > button[data-active]')?.getAttribute('data-tag');
+      if (!activeTag) return;
+
+      updateGalleryImages(activeTag);
+      updateFilterStyles();
+    });
+  });
+
+  const initialActiveTag = document.querySelector<HTMLButtonElement>('#tag > button[data-active]')?.getAttribute('data-tag');
+  if (initialActiveTag) {
+    updateActiveTag(initialActiveTag);
+  }
+});
+</script>
