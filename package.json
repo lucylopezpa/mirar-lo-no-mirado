@@ -25,6 +25,7 @@
     "react-dom": "^18.3.1",
     "react-markdown": "^9.0.1",
     "react-zoom-pan-pinch": "^3.6.1",
+    "scrollmagic": "^2.0.8",
     "scrollmagic-plugins": "^1.0.8",
     "swiper": "^11.1.15",
     "tailwind-merge": "^2.5.4",
@@ -33,6 +34,7 @@
     "vaul": "^1.1.1"
   },
   "devDependencies": {
-    "@types/file-saver": "^2.0.7"
+    "@types/file-saver": "^2.0.7",
+    "@types/scrollmagic": "^2.0.8"
   }
 }

@@ -1,6 +1,8 @@
 
 import clsx from "clsx"
 import { useEffect, useRef, type DetailedHTMLProps, type FC, type HTMLAttributes } from "react"
+import ScrollMagic from 'scrollmagic'
+// import 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators'
 
 interface LayeredProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   background: string
@@ -9,42 +11,40 @@ interface LayeredProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>,
 }
 
 const Layered: FC<LayeredProps> = ({ background, foreground, alt = "", className = 'relative' }) => {
-  const containerRef = useRef<HTMLDivElement>(null)
+  const triggerRef = useRef<HTMLDivElement>(null)
   const foregroundRef = useRef<HTMLImageElement>(null)
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const opacity = 1 - entry.intersectionRatio
-        // @ts-ignore
-        foregroundRef.current.style.opacity = Math.min(opacity * 5, 1)
-      }
-    })
-  }, {
-    threshold: [0.7, 0.8, 0.9, 1]
-  })
 
   useEffect(() => {
-    if (containerRef.current) {
-      observer.observe(containerRef.current)
-    }
+    if (!foregroundRef.current || !triggerRef.current) return
+
+    const controller = new ScrollMagic.Controller({
+      vertical: false,
+      loglevel: 3
+    })
+
+    const scene = new ScrollMagic.Scene({
+      triggerElement: triggerRef.current,
+      duration: triggerRef.current.scrollWidth / 2,
+      triggerHook: 'onCenter',
+    })
+    .addTo(controller)
+    // .addIndicators()
+
+    scene.on("progress", function(event) {
+      // @ts-expect-error event.progress is not typed
+      foregroundRef.current!.style.opacity = event.progress + ''
+    })
     return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current)
-      }
+      scene.destroy()
     }
-  }, [])
+  }, [foregroundRef])
 
   return (
-    <div className={clsx(className)} ref={containerRef}>
+    <div className={clsx(className)}>
       <img className="w-full h-auto" src={background} alt={alt} />
-      <img
-        ref={foregroundRef}
-        src={foreground}
-        className="absolute top-0 left-0 w-full h-auto"
-        style={{ opacity: '0' }}
-        alt={alt}
-      />
+      <div className="absolute top-0 left-1/2 w-1/2 h-full" ref={triggerRef}></div>
+      <img src={foreground} className="absolute top-0 left-0 w-full h-auto" style={{ opacity: '0' }} ref={foregroundRef} alt={alt} />
     </div>
   )
 }
