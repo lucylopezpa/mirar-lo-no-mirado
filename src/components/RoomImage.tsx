@@ -47,11 +47,13 @@ const RoomImage: FC<RoomImageProps> = ({ id }) => {
           src={image}
           alt={description}
           className="w-full max-w-lg h-auto shadow-lg"
+          loading="lazy"
         />
+        <div className="swiper-lazy-preloader"></div>
         <Dialog.Root>
           <Dialog.Trigger asChild>
             <button type="button" className="top-2 right-2 absolute">
-              <img src={fullscreenIcon.src} className="size-8 shadow-2xl" alt="" />
+              <img src={fullscreenIcon.src} className="size-8 shadow-2xl" alt=""  />
             </button>
           </Dialog.Trigger>
           <Dialog.Portal>
@@ -74,6 +76,7 @@ const RoomImage: FC<RoomImageProps> = ({ id }) => {
                     src={image}
                     alt={description}
                     className="mx-auto"
+                    loading="lazy"
                   />
                 </TransformComponent>
               </TransformWrapper>

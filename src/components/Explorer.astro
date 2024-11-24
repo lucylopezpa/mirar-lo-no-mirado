@@ -1,31 +1,84 @@
 <div class="flex justify-between" id="filters">
-  <button type="button" data-filter="texturas" class="border-b border-floral-white px-2">Texturas</button>
-  <button type="button" data-filter="geometria" class="border-b border-floral-white px-2">Geometría</button>
-  <button type="button" data-filter="simetria" class="border-b border-floral-white px-2">Simetría</button>
-  <button type="button" data-filter="iluminacion" class="border-b border-floral-white px-2">Iluminación</button>
+  <button
+    type="button"
+    data-filter="texturas"
+    class="border-b border-floral-white px-2">Texturas</button
+  >
+  <button
+    type="button"
+    data-filter="geometria"
+    class="border-b border-floral-white px-2">Geometría</button
+  >
+  <button
+    type="button"
+    data-filter="simetria"
+    class="border-b border-floral-white px-2">Simetría</button
+  >
+  <button
+    type="button"
+    data-filter="iluminacion"
+    class="border-b border-floral-white px-2">Iluminación</button
+  >
 </div>
 <div class="columns-2 mt-4 gap-0">
-  <div class="item texturas"><img src="/idaesbra-mirarlonomirado/images/salas/Somos_03.jpg" alt="" /></div>
-  <div class="item texturas"><img src="/idaesbra-mirarlonomirado/images/salas/Somos_06.jpg" alt="" /></div>
-  <div class="item iluminacion"><img src="/idaesbra-mirarlonomirado/images/salas/Fragmentos_05.jpg" alt="" /></div>
-  <div class="item geometria"><img src="/idaesbra-mirarlonomirado/images/salas/Caribe_18.jpg" alt="" /></div>
-  <div class="item geometria"><img src="/idaesbra-mirarlonomirado/images/salas/Caribe_16.jpg" alt="" /></div>
-  <div class="item geometria"><img src="/idaesbra-mirarlonomirado/images/salas/Caribe_04.jpg" alt="" /></div>
-  <div class="item geometria"><img src="/idaesbra-mirarlonomirado/images/salas/Fragmentos_06.jpg" alt="" /></div>
-  <div class="item simetria"><img src="/idaesbra-mirarlonomirado/images/salas/Somos_02.jpg" alt="" /></div>
-  <div class="item simetria"><img src="/idaesbra-mirarlonomirado/images/salas/Somos_16.jpg" alt="" /></div>
-  <div class="item iluminacion"><img src="/idaesbra-mirarlonomirado/images/salas/Fragmentos_14.jpg" alt="" /></div>
+  <div class="item texturas">
+    <img src="/idaesbra-mirarlonomirado/images/salas/Somos_03.jpg" alt="" loading="lazy" />
+  </div>
+  <div class="item texturas">
+    <img src="/idaesbra-mirarlonomirado/images/salas/Somos_06.jpg" alt="" loading="lazy" />
+  </div>
+  <div class="item iluminacion">
+    <img
+      src="/idaesbra-mirarlonomirado/images/salas/Fragmentos_05.jpg"
+      alt=""
+      loading="lazy"
+    />
+  </div>
+  <div class="item geometria">
+    <img src="/idaesbra-mirarlonomirado/images/salas/Caribe_18.jpg" alt="" loading="lazy" />
+  </div>
+  <div class="item geometria">
+    <img src="/idaesbra-mirarlonomirado/images/salas/Caribe_16.jpg" alt="" loading="lazy" />
+  </div>
+  <div class="item geometria">
+    <img src="/idaesbra-mirarlonomirado/images/salas/Caribe_04.jpg" alt="" loading="lazy" />
+  </div>
+  <div class="item geometria">
+    <img
+      src="/idaesbra-mirarlonomirado/images/salas/Fragmentos_06.jpg"
+      alt=""
+      loading="lazy"
+    />
+  </div>
+  <div class="item simetria">
+    <img src="/idaesbra-mirarlonomirado/images/salas/Somos_02.jpg" alt="" loading="lazy" />
+  </div>
+  <div class="item simetria">
+    <img src="/idaesbra-mirarlonomirado/images/salas/Somos_16.jpg" alt="" loading="lazy" />
+  </div>
+  <div class="item iluminacion">
+    <img
+      src="/idaesbra-mirarlonomirado/images/salas/Fragmentos_14.jpg"
+      alt=""
+      loading="lazy"
+    />
+  </div>
 </div>
 <script>
-  const filters = document.getElementById("filters")
-  const items = Array.from(document.querySelectorAll(".item"))
-  
-  const activeFilters = new Set(["texturas", "geometria", "simetria", "iluminacion"]);
-  
+  const filters = document.getElementById("filters");
+  const items = Array.from(document.querySelectorAll(".item"));
+
+  const activeFilters = new Set([
+    "texturas",
+    "geometria",
+    "simetria",
+    "iluminacion",
+  ]);
+
   filters?.addEventListener("click", (e) => {
-    const element = e.target as HTMLElement
-    if (!element.matches("button")) return
-    const filter = element.dataset.filter as string
+    const element = e.target as HTMLElement;
+    if (!element.matches("button")) return;
+    const filter = element.dataset.filter as string;
 
     if (activeFilters.has(filter)) {
       activeFilters.delete(filter);
@@ -39,13 +92,15 @@
       element.classList.remove("opacity-20");
     }
 
-    items.forEach(item => {
-      const isVisible = Array.from(activeFilters).some(filter => item.className.includes(filter));
+    items.forEach((item) => {
+      const isVisible = Array.from(activeFilters).some((filter) =>
+        item.className.includes(filter)
+      );
       if (!isVisible) {
-        item.classList.add("opacity-20")
+        item.classList.add("opacity-20");
       } else {
-        item.classList.remove("opacity-20")
+        item.classList.remove("opacity-20");
       }
     });
-  })
+  });
 </script>
