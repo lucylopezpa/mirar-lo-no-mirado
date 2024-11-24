@@ -98,7 +98,7 @@ swiper.on("slideChange", ({ activeIndex }) => {
 
 next.forEach(button => {
   button.addEventListener('click', () => {
-    swiper.slideNext()
+    swiper.slideNext(0)
   })
 })
 
