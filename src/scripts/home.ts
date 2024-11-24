@@ -4,6 +4,21 @@ import { Mousewheel, Pagination } from "swiper/modules";
 import type { SwiperOptions } from "swiper/types";
 import { getSlideIndex, roomConfigs, type Slider } from "./utils";
 
+const root = document.documentElement;
+const swiperRoot = document.querySelector<HTMLDivElement>(".swiper-root")!;
+const navbar = document.getElementById("navbar")!;
+const rooms = document.querySelectorAll<HTMLElement>(".swiper-room");
+const roomsNav = document.getElementById("rooms-nav")!;
+const next = document.querySelectorAll("button.next");
+const roomsAnchor = Array.from(document.querySelectorAll(".js-room-anchor"));
+
+const tabs = new Map<string, HTMLButtonElement>();
+
+const swiperRootHeight =
+  root.offsetHeight - navbar?.offsetHeight - roomsNav.offsetHeight;
+
+swiperRoot.style.height = swiperRootHeight + 'px';
+
 const options: SwiperOptions = {
   modules: [Mousewheel, Pagination],
   direction: "horizontal",
@@ -12,16 +27,10 @@ const options: SwiperOptions = {
     enabled: true,
     forceToAxis: true,
   },
+  height: swiperRootHeight,
+  autoHeight: false,
   // cssMode: true,
 };
-
-const root = document.documentElement;
-const rooms = document.querySelectorAll<HTMLElement>(".swiper-room");
-const roomsNav = document.getElementById("rooms-nav");
-const next = document.querySelectorAll("button.next")
-const roomsAnchor = Array.from(document.querySelectorAll(".js-room-anchor"));
-
-const tabs = new Map<string, HTMLButtonElement>();
 
 const swiper = new Swiper(".swiper-root", options);
 
@@ -96,11 +105,11 @@ swiper.on("slideChange", ({ activeIndex }) => {
   roomsNav?.classList.toggle("opacity-0", activeIndex < 3);
 });
 
-next.forEach(button => {
-  button.addEventListener('click', () => {
-    swiper.slideNext(0)
-  })
-})
+next.forEach((button) => {
+  button.addEventListener("click", () => {
+    swiper.slideNext(0);
+  });
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   const search = queryString.parse(location.search);
