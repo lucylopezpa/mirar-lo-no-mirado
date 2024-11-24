@@ -12,7 +12,7 @@ const options: SwiperOptions = {
     enabled: true,
     forceToAxis: true,
   },
-  cssMode: true,
+  // cssMode: true,
 };
 
 const root = document.documentElement;
